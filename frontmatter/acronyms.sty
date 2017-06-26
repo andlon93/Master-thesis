@@ -1,0 +1,28 @@
+% --- List of acronyms.
+%     To enter an acronym inside the text, use the
+%         \ac{<acronym>}
+%     command. The first time you use an acronym, the full name of the acronym along
+%     with the acronym in parentheses will be printed. 
+%
+% --- Declarations of acronyms
+\DeclareAcronym{ann}{
+  short = ANN ,
+  long  = artificial neural network
+}
+\DeclareAcronym{ffnn}{
+  short = FFNN ,
+  long  = feed forward neural network
+}
+\DeclareAcronym{ga}{
+  short = GA ,
+  long  = genetic algorithm
+}
+%
+% --- Acronym list style.
+\DeclareAcroListStyle{tabular}{table}{
+  table = longtable,
+  before = \singlespacing\vspace*{-\baselineskip}\renewcommand\arraystretch{1.655},
+  table-spec = >{\bfseries}l p{0.81\textwidth}	
+}
+\acsetup{extra-style=comma, list-style=tabular}
+

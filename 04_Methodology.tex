@@ -1,0 +1,69 @@
+\acresetall
+%%=========================================
+\chapter{Methodology}
+
+This computational model is based on Lekvam’s model, adding personalities based on Schwartz' 10 values model \citep{lekvam2014co, schwartz2012overview}. This chapter will also present a new method for choosing a listener, calculating the weights in the social network, and a new fitness function.
+
+The model use a genetic algorithm which simulate the evolution of language and social networks over time. Tournament selection is used as parent selection. In tournament selection, a pool of random agents are chosen. Then the agents are sorted based on their fitness. The probability of an agent being chosen is,
+\begin{equation}
+    \label{eq:TSelect}
+    P_{parent} = p ((p-1)^{i})
+\end{equation}
+where $i$ is a counter starting at zero, and $p$ equals the probability of the fittest agent in the pool being chosen as the parent. Turnover selection is performed by randomly choosing $k\%$ of the population into a pool. Then, the $n\%$ least fit agents of that pool do not survive until the next population. 
+
+Personalities are added into the model in the form of an agent’s genome. The genotype of an agent consists of one number between $[0, 100]$ for each of the ten values from Schwartz’s model. The values can not be randomly initiated because some of the values describe relatively equal goals, while some other values are contradictory. If two contradicting values both have a high value, the goals of that person would contradict each other. So, in order to ensure the validity of the relations between the ten values, all values can not be created randomly. In figure \ref{fig:TenValuesSchwartz}, the values are divided into four groups. Values within a group are related and should have numerical values close to each other. While values on the opposite side of the circle should have opposite numerical values. In this model, the validity of the relations between the values are kept by randomly setting the self direction and achievement value. Values in the same quadrant are set by using this formula:
+
+\begin{equation}\label{eq:valuesInSameQuadrant}
+V_{i} = \frac{\mathrm{random}(0, 20)}{100} \ast V_{i-1},
+\end{equation}
+where $V_{i}$ is the number associated with value $i$, $V_{i-1}$ is the number associated with the value counter clockwise of $V_i$ in the circle, and $\mathrm{random}(0, 20)$ is a random integer in the interval $[0, 20]$. Security and benevolence is set based on the opposite value using the formula:
+\begin{equation}\label{eq:valuesInOppositeQuadrant}
+V_{i} = \frac{\mathrm{random}(1, 20)}{100} \ast (100 - V_{\mathrm{opposite}}).
+\end{equation}
+
+The other values in the quadrants with security or benevolence is set based on the formula \ref{eq:valuesInSameQuadrant}. Hedonism is split between two quadrants and it is therefore calculated based on the two values next to it in figure \ref{fig:TenValuesSchwartz} through this formula:
+\begin{equation}\label{eq:hedonism}
+V_{i} = \frac{\mathrm{random}(1, 20)}{100} \ast \frac{V_{i-1} + V_{i+1}}{2}.
+\end{equation}
+
+The values of the genome is then normalised, representing the individual’s personality and phenotype. A newborn’s genotype is made using crossover from two parents genotypes, and the new genotype has a small probability of mutation. Mutation is conducted by randomly altering one value in the genotype. Each agent have a vocabulary similar to the vocabulary used in Lekvam’s model. The vocabulary consists of the utterances an agent has heard or created. Each utterance have a corresponding weight describing how successful the utterance has been in past conversations.     
+
+The social network in the model is represented by a weighted discrete graph, where the vertices represent the agents, and the edges represent the connections between the agents. If a dialogue is successful, the weight of the edge between the two agents increases and if it was unsuccessful the weight decreases. An edge gets added a weight of $1$ if the dialogue is successful and $0.5$ is subtracted if the dialogue was unsuccessful. This method of calculating the a weight allows the language of the agent to affect the weight of the edge.
+ 
+The fitness function used is made to represent how well an agent communicates with the members of the community, as well as how the agent’s personality fits in with the group. An agent's ability to communicate was projected into the social network because the weights were adjusted based on an agent’s ability to be understood. The personality of the agents determines how good it is at learning a language, how extrovert it is, and whether it cares about its children. The fitness function also take into account the age of the agent. The fitness function is,
+
+\begin{equation}\label{eq:Fitness}
+\text{Fitness} = \Big( e^{\alpha \sum_{i=1}^{N}{W_{i}}}-1 \Big) \ast \Big( e^{\beta N_{W_{i\geq \text{constant}}}}-1 \Big) \ast \gamma e^{-0.05 \text{age}},
+\end{equation}
+
+where $W_{i}$ is the weight of an agent, $N$ is the total number of vertices in the network, $W_{\text{max}}$ is the strongest weight in the network, and $\alpha, \beta, and \gamma$ are constants adjusting the three parts of the fitness function. The first part calculates the sum of all weights of an agent to display how strongly it connects to others. The second part calculates how many agents with a minimum strength in connection the agent has a connection with. The third part provides an agent with less fitness the older it becomes. These three functions combined display the agent’s fitness in the society. It takes into account the number of connections it has, the strength of the connections, and its age.
+
+When an agent chooses a listener, the agents social network and personality is used. An agent can either be extrovert or introvert, based on its values. The positive extrovert value is achievement; people often seek recognition for their achievements. An achievement no one knows about, is not worth anything. The negative value is conformity; restraint from doing certain actions because one is scared of the consequences. People who value this high think a lot about consequences and might be careful in social settings because of it. Each of these values were taken from an agent’s genome and is therefore in the interval $[0, 100]$. Based on these values, this formula describes the probability of an agent reaching out to agents that it does not already have a connection with,
+
+\begin{equation}\label{eq:chooseListener}
+P = \parentheses{\frac{\sum \text{extrovert values} + (100 - \sum \text{introvert values})}{200\ast C}}/100,
+\end{equation}
+
+where $C$ is a constant, between $[0.0, 1.0]$, which forces all individuals to have a tendency towards introvertedness. People tend to have more conversations with people they already know, so skewing the probability towards introvertedness seems reasonable. The first conversations a newborn has might be with its parents. The probability of having dialogues with parents is equal to the normalised value of the security value in the genome. Each parent will conduct three dialogues each and the newborn will function as the listener in all these conversations. If the speaking agent decides to act introvertly, the probability of contacting one specific agent is related to the weight between the agents:
+\begin{equation}\label{eq:intrvertListener}
+P_{i} = \frac{W_{i}}{\sum_{j=0}^{N}{W_{j}}},
+\end{equation}
+Where $N$ is the number of edges the agent had, and $W_{j}$ is the weight of an edge. If the agent decides to be extrovert, it randomly chooses an agent from the population to contact.
+
+Agents also altered their personality based on who they communicate with. After a conversation, both agents altered their values using this formula,
+
+\begin{equation}\label{eq:PCR}
+\text{Personality change rate} = \parentheses{\frac{\Delta \text{Value} \ast \text{isSuccess}}{\text{age}}}\ast C,
+\end{equation}
+
+where $\Delta \text{Value}$ is the difference of a specific value in the two agents' genomes, $\text{isSuccess}$ is a boolean which ensures that the personality is not changed if a conversation is unsuccessful, and $\text{age}$ is the number of generations the agent has lived. After this is calculated for all values in the genome, it is normalised again.
+
+One conversation is conducted by the speaker uttering a word from its vocabulary. The probability of a specific word from the vocabulary being uttered is:
+
+\begin{equation}\label{eq:chooseWordprob}
+P_{i} = \frac{W_{i}}{\sum_{j=o}^{N}W_{j}},
+\end{equation}
+
+where $W_{i}$ is the weight of word $i$ in the vocabulary, and $\sum_{j=o}^{N}W_{j}$ is the sum of the weights of all words in the vocabulary. If the speaking agent has an empty vocabulary, it invents a new word. If the listener has the utterance in its vocabulary, the conversation is redeemed as a success, and the weight of the edge in the social network is updated, the personality is altered, and the weight of the word in the vocabulary is changed for both agents. If the listener did not have the word in its vocabulary, the conversation is a failure, and the weight of the edge in the social network is updated for both agents. The speaking agent decreases the weight of the word in its vocabulary, while the listener adds the word into its vocabulary. None of the agents' personalities are changed when the conversation is unsuccessful.
+
+%%=========================================

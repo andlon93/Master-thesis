@@ -1,0 +1,91 @@
+%%===================================
+% === MAIN-file =====================
+% This template is made by Oda Lauten
+%%===================================
+\documentclass[12pt, a4paper, twoside, openright]{book}
+\usepackage{config/packages}
+\usepackage{config/commands}
+\usepackage{config/input}
+\usepackage{frontmatter/acronyms}
+\begin{document}
+
+%%===================================
+% --- Frontmatter
+%%===================================
+\frontmatter
+
+
+
+% Title page
+\input{frontmatter/front}
+\input{frontmatter/front2}
+
+% Information
+\input{frontmatter/information}
+
+% Dedication [optional]
+%\input{frontmatter/dedication}
+
+% Abstract
+\input{frontmatter/abstract}
+
+% Acknowledgements [optional]
+%\input{frontmatter/acknowledgements}
+
+% Quote [optional]
+%\input{frontmatter/quote}
+
+% Preface [optional]
+\input{frontmatter/preface}
+
+% Table of Contents
+\renewcommand*\contentsname{Table of Contents}
+\tableofcontents
+
+% List of figures [optional]
+\listoffigures
+
+% List of tables [optional]
+\listoftables
+
+% List of acronyms and abbreviations (symbols, and notation) [optional]
+\printacronyms[heading=chapter, name=List of Acronyms, sort=true]
+
+
+%%===================================
+% --- Mainmatter
+%%===================================
+\mainmatter
+
+% Chapters
+
+\input{01_introduction}
+\input{02_Background}
+\input{03_LitteratureStudy}
+\input{04_Methodology}
+\input{05_Results}
+\input{06_Discussion}
+\input{07_Conclusions}
+
+%\input{04_Conclusion}
+
+% Appendices
+\appendix
+%\chapter{<Name of Appendix>}, e.g. \chapter{a01_calculations}
+
+
+%%===================================
+% --- Backmatter
+%%===================================
+
+% Bibliography
+\clearpage
+\bibliography{backmatter/references}
+
+% Index [optional]
+%\printindex
+
+%%===================================
+\end{document}
+% === end MAIN ======================
+%%===================================

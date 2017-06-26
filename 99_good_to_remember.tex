@@ -1,0 +1,74 @@
+\chapter[Good to Remember]{This is a Chapter About the Things that are Good to Remember while Writing a Master's Thesis}
+Remark: If you want a shorter chapter or section title to appear in the Table of Contents and in the headings of the chapter, you just include the short title in square brackets before the title of the chapter/section.
+
+\section{Example of Setup}
+\begin{itemize}
+\item Introduction
+    \begin{enumerate}
+    \item{Research / Problem}
+    \item{Importance of Resarch}
+    \item{Significant Prior Research}
+    \item{Research Approach or Methodology}
+    \item{Limitations and Key Assumptions}
+    \item{Potential Outcomes of Research and Importance of Each}
+    \end{enumerate}
+\item{Theory}
+\item{Analytic Solution}
+\item{Numerical Solution}
+\item{Summary and Outlook}
+\end{itemize}
+
+\section{Simple Equations}
+
+\index{angels}The number of angels\nomenclature{$N$}{number of angels} are given by
+\begin{equation}
+N = \sigma * A
+\end{equation}
+where $A$ is the total area and $\sigma$ is the total mass of angels per unit area.\nomenclature{$A$}{total area}\nomenclature{$\sigma$}{The total mass of angels per unit area} It is useful to note that \ac{BMI} is important. And that \ac{BMI} is important.
+
+\section{Figures and Tables}
+Remember that all figures and tables shall be referred to and explained/discussed in the text. If a figure/table is not referred to in the text, it shall be deleted from the report. Also it is important that the table or figure has a caption that makes it possible to understand what the figure or table are representing.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{NTNUlogo.pdf}
+    \caption{The logo of the Norwegian University of Science and Technology.}
+    \label{fig:NTNUlogo}
+\end{figure}
+
+The caption of figures should be below the figure, while the caption of tables should be above the table.
+
+\begin{table}[htbp]
+    \centering
+    \caption{The number of citizens per 1. January in the city of Oslo between year 1999 and 2004.}
+    \begin{tabular}{cc}
+    \hline
+    \textbf{Year}   &  \textbf{Number of citizens}  \\
+    \hline
+    1999            &  10001                        \\
+    2001            &  12345                        \\
+    2002            &  23456                        \\
+    2003            &  47654                        \\
+    2004            &  97478                        \\
+    \hline
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+
+\section{Copying Figures and Tables}
+In some cases, it may be relevant to include figures and tables from from other publications in your report. 
+
+This can be a direct copy or that you retype the table or redraw the figure. In both cases, you should include a reference to the source in the figure or table caption. The caption might then be written as: Figure/Table xx: The caption text is coming here (Rausand and Høyland, 2004).
+
+In other cases, you get the idea from a figure or table in a publication, but modify the figure/table to fit your purpose. If the change is significant, your caption should have the following format: Figure/Table xx: The caption text is coming here (adapted from Rausand and Høyland, 2004
+
+\section{Plagiarism}
+Plagiarism is defined as “use, without giving reasonable and appropriate credit to or acknowledging the author or source, of another person’s original work, whether such work is made up of code, formulas, ideas, language, research, strategies, writing or other form”, and is a very serious issue in all academic work. You should adhere to the following rules:
+- Give proper references to all the sources you are using as a basis for your work. The references should be give to the original work and not to newer sources that mention the original sources.
+- You may copy paragraphs up to 50 words when you include a proper reference. In doing so, you should place the copied text in inverted commas (i.e., “Copied text follows . . . ”). Another option is to write the copied text as a (idented) quotation.
+
+\section{Citation}
+
+For an explicit reference use \textbackslash cite\{citekey\}, e.g. humans can communicate as shown by \cite{winograd1972understanding}.
+
+For an implicit reference use \textbackslash citep\{citekey\}, e.g. humans can communicate \citep{gregory1987oxford}.
