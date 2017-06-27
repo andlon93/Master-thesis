@@ -64,7 +64,7 @@ The figures displaying the social network at generation $5$, $20$, $40$ and $100
     \hfill
     \subfigure[]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp1/Vocabulary1}}
     \par \bigskip
-    \subfigure[]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp1/Genes1}}
+    \subfigure[]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp1/Genes1}\label{fig:Genes1}}
     \caption{The average fitness per agent and max fitness for each generation.}
     \label{fig:Fitness}
 \end{figure}
@@ -153,7 +153,7 @@ This experiment was conducted with $d = 5$, meaning that each generation conduct
     \subfigure[]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/UniqueWords1}}
     \hfill
     \subfigure[]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/Vocabulary1}}
-    \par \bisgkip
+    \par \bigskip
     \subfigure[]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/genes1}}
     \hfill
     \label{fig:Fitness4}
@@ -186,7 +186,16 @@ This experiment was conducted with the constant, $\delta = 1$. $\delta$ is relat
     \caption{blabla}
     \label{fig:Fitness5}
 \end{figure}
-
+\begin{figure}
+    \centering
+    \subfigure[Social network at generation 5]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/_graph5}\label{exp5SN5}}
+    \hfill
+    \subfigure[Social network at generation 10]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/_graph10}\label{exp5SN10}}
+    \par \bigskip
+    \subfigure[Social network at generation 20]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/_graph20}}
+    \hfill
+    \subfigure[Social network at generation 150]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/_graph150}}
+\end{figure}
 \subsection{Experiment 6 - Turnover}
 The first experiment was performed with $k = 0.95$ and $n = 0.7$. The figures displaying the results of the first experiment are \ref{fig:Fitness6}. This simulation was run for $150$ generations because the population were far away from reaching consensus after $100$ generations. The figures that display the genes and the evolution of the social network have not been included because they were similar to the ones from the main experiment. Both the average fitness and degree stabilised after about $75$ generations. The average degree stabilised at $11$ and the average fitness at $0.88$. The number of unique words decreased a lot during the first $20$ generations. The simulation did not reach consensus. It reached two unique words at generation $125$, and ended with two unique words after all $150$ generations.   
 
