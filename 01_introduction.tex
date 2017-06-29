@@ -4,25 +4,31 @@
 % The first chapter of a well-structured thesis is always an introduction, setting the scene with background, problem description, objectives, limitations, and then looking ahead to summarize what is in the rest of the report. This is the part that readers look at first—so make sure it hooks them!
 The complexity of human language is one of the biggest distinctions between us and other animals \citep{hauser2002faculty}. Many have tried to explain how human language evolved into what it is today, but no one has managed to do so yet \citep{chomsky1986knowledge, pinker1990natural, muller1861theoretical}. In recent years, computational models have contributed to the field of language evolution. The main contribution has come from the computational models used to test the validity of language evolution theories through simulations.
 
-This thesis will present four computational models that simulate language evolution. In order to understand the field of language evolution and the models, a relevant theory will be presented. This includes theories on language evolution, graph theory, social networks, and \acp{ga}. A theory concerning how to model personalities will also be presented. Then a model studying the impact of cultural evolution will be presented. The model combines the evolution of social networks, language, and individual personality.
+This thesis will present four computational models that simulate language evolution. In order to understand the field of language evolution and the computational models, the necessary theory will be presented. This includes theories on language evolution, graph theory, social networks, and \acp{ga}. A theory concerning how to model personalities will also be presented.
 
-\todo{Skriv kort om min metode. Introduser de tingene jeg har fokusert på for at ikke det som tas opp i teorikapittelet skal komme brått på.}
+A computational model based on the work by \citeauthor{lekvam2014co} will be presented. The model uses Lekvam's work through his model's evolutionary algorithm and naming game. This thesis will attempt to improve upon his computational model by adding a new \textit{fitness function}, a new method for calculating the weights in the social network, slightly alter how agents decide to have a conversation, and a new \textit{genome} will be presented. The new genome is based on \citet{schwartz1992unniversals} who formulated a theory which attempts to define personalities through $10$ values. His theory will be presented in Chapter~\ref{ch:background}.
+
+%In order to understand the field of language evolution and how computational models simulating language evolution are designed, the necessary theory will be presented. This includes theories on language evolution, graph theory, social networks, and \acp{ga}. A theory concerning how to model personalities will also be presented.
+
+%The computational model designed for this thesis uses Lekvam's work through his model's evolutionary algorithm and naming game. This thesis will attempt to improve upon his work by adding a new \textit{fitness function}, a new method for calculating the weights in the social network, slightly alter how agents decide to conduct a conversation, and a new \textit{genome} will be presented. The new genome is based on \citet{schwartz1992unniversals} who formulated a theory which attempts to define personalities through $10$ values. His theory will be presented in \label{ch:background}.
+
 
 \section{Objectives}
+The objectives of this thesis are:
+
 \begin{centering}
     \begin{enumerate}
         \item Investigate the state of the art in computational models that simulate language evolution and discuss their strengths and weaknesses.
-        \item One of the computational models will be extended in an attempt to learn more about how the evolutionary forces affect language evolution.
+        \item The compuational model presented in \citet{lekvam2014co} will be extended in an attempt to learn more about how the evolutionary forces affect language evolution.
         \item The computational model will continue the trend of simulating the co-evolution of language and social networks.  
     \end{enumerate}
 \end{centering}
 
 \section{Contribution}
+This thesis will contribute to the field of computational language evolution models from a computer scientists perspective. This thesis will contribute to the field by presenting some new ideas that might enhance our understanding of the effect the evolutionary forces has on language evolution and the co-evolution of language and social networks.
 
 \section{Outline}
-
-
-
+Chapter~\ref{ch:background} presents theories that are relevant to the computational model designed for this thesis. In Chapter~\ref{ch:Chapter3}, four recently designed computational models will be discussed. The design of the computational model used in this thesis is presented in Chapter~\ref{ch:Chapter4}. Chapter~\ref{ch:Chapter5} presents the results of the seven experiments that were performed using the model presented in the previous chapter. Then, in Chapter~\ref{ch:Chapter6} the results are discussed. Finally, in Chapter~\ref{ch:Chapter7} a summary and conclusion of the discussed results and recommendations for future work are presented.      
 
 %\section{Background}
 % In this section, you should present the problem that you are going to investigate or analyze; why this problem is of interest; what has, so far, been done to solve the problem, and which parts of the problem that remain.

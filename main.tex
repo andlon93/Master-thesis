@@ -43,14 +43,16 @@
 \tableofcontents
 
 % List of figures [optional]
+%\begingroup\let\clearpage\relax  % Print list of tables, figures and acronyms on same page as list of figures
 \listoffigures
 
 % List of tables [optional]
 \listoftables
 
+
 % List of acronyms and abbreviations (symbols, and notation) [optional]
 \printacronyms[heading=chapter, name=List of Acronyms, sort=true]
-
+%\endgroup
 
 %%===================================
 % --- Mainmatter
