@@ -43,6 +43,8 @@ Table \ref{tab:params} displays the parameters, the base values used in the main
 \section{Experiments}
 This section will present seven experiments. The experiments were conducted in the order in which they are presented. The first experiment represents the main results and the foundation for all experiments performed after it. The next two experiments tested what happens when the population increases or decreases. The fourth experiment was performed with an increased amount of dialogues per generation. The results from the third experiment lead to a hypothesis which is tested in the next experiment through lowering the probability of parent-child dialogues. The hypothesis will be presented in the discussion of the results. Experiment six tests how altering the turnover affects the evolutionary processes in this model. The last experiment adds a probability for agents to invent a new word even though their vocabulary is not empty.
 
+In several of the experiments, some results were not included. The results not included were deemed as unimportant for the discussion in this thesis. These results can be seen in Appendix \ref{AppendixA}.
+
 \subsection{Experiment 1 - Main results}
 The main experiment was conducted with the exact values from table \ref{tab:params}. See figure~\ref{fig:Fitness} for the figures related to this experiment.
 
@@ -182,9 +184,7 @@ This experiment was conducted with the constant, $\delta = 1$. $\delta$ is relat
 \subsection{Experiment 6 - Turnover}
 The first experiment was performed with $k = 0.95$ and $n = 0.7$. See figure~\ref{fig:Fitness6} for the figures related to this experiment. This simulation was run for $150$ generations because the population were far away from reaching consensus after $100$ generations. The figures that display the genes and the evolution of the social network have not been included because they were similar to the ones from the main experiment. Both the average fitness and degree stabilised after about $75$ generations. The average degree stabilised at $11$ and the average fitness at $0.88$. The number of unique words decreased a lot during the first $20$ generations. The simulation did not reach consensus. It reached two unique words at generation $125$, and ended with two unique words after all $150$ generations.   
 
-The second experiment related to turnover was conducted with $k = 0.95$ and $n = 0.85$. See figure~\ref{fig:6.1} for the figure related to this experiment. The only figure included was the one related to the number of unique words because it is the only one who will be discussed later on. \todo{The other figures can be found in appendix xx}. This simulation was ran for $200$ generations in order for it to reach consensus. Consensus was reached at generation $178$. At generation $125$, when the previous experiment had reached two words, this simulation had six unique words. 
-
-\todo{legge inn genes og sn for 6.0 og alt bortsett fra unique words for 6.1 i appendix}
+The second experiment related to turnover was conducted with $k = 0.95$ and $n = 0.85$. See figure~\ref{fig:6.1} for the figure related to this experiment. The only figure included was the one related to the number of unique words because it is the only one who will be discussed later on. This simulation was ran for $200$ generations in order for it to reach consensus. Consensus was reached at generation $178$. At generation $125$, when the previous experiment had reached two words, this simulation had six unique words. 
 
 \begin{figure}[htbp]
     \centering
@@ -203,10 +203,10 @@ The second experiment related to turnover was conducted with $k = 0.95$ and $n =
 
 
 \subsection{Experiment 7 - making up new words}
-This experiment was conducted with an added probability for agents to invent a new word even though they had at least one word in their vocabulary. The probability was set to $0.25$ in this experiment. See figure~\ref{fig:Fitness7} for the figures related to this experiment. The average fitness stabilised at $0.37$, and the average degree stabilised at about $6.5$. Both of these values were considerably lower than in the main experiment. The average vocabulary size was $6$ and the percentage of successful dialogues quickly reached $0.5$ but it did not slowly increase like in the previous experiments. The number of unique highest ranked words evolved similarly to the main experiment. The population reached consensus at generation $68$, only six generations after the main experiment. 
+This experiment was conducted with an added probability for agents to invent a new word even though they had at least one word in their vocabulary. The probability was set to $25\%$ in this experiment. See figure~\ref{fig:Fitness7} for the figures related to this experiment. The average fitness stabilised at $0.37$, and the average degree stabilised at about $6.5$. Both of these values were considerably lower than in the main experiment. The average vocabulary size was $6$ and the percentage of successful dialogues quickly reached $0.5$ but it did not slowly increase like in the previous experiments. The number of unique highest ranked words evolved similarly to the main experiment. The population reached consensus at generation $68$, only six generations after the main experiment. 
 
-One other experiment was performed with the probability set to $0.45$. See figure~\ref{fig:7.1} for the figure related to this experiment. The other graphs have not been included because they will not be relevant to the discussion\todo{legg ved de andre grafene i appendix}. The number of unique words quickly dropped to about five, but from five it struggled to actually reach consensus. From generation $61$ to the end of the simulation, the number of unique highest ranked words varied from one to three.  
-\todo{flytte genes til appendix}
+One other experiment was performed with the probability set to $45\%$. See figure~\ref{fig:7.1} for the figure related to this experiment. The other graphs have not been included because they will not be relevant to the discussion. The number of unique words quickly dropped to about five, but from five it struggled to actually reach consensus. From generation $61$ to the end of the simulation, the number of unique highest ranked words varied from one to three.  
+
 \begin{figure}[htbp]
     \centering
     %Figurtekst, tror jeg. Men i følge Randi skal sånn stå i hovedfigurteksten: Figurer fra resultater fra eksp. 7: a) Avg. fitness; b) avg. degree; and c) ....
