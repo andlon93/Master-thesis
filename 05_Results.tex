@@ -2,14 +2,14 @@
 %%=========================================
 \chapter{Results}\label{ch:Results}
 
-This chapter will present the results gathered through 7 experiments using the computational model presented in the previous chapter.
+This chapter will present the results gathered through seven experiments using the computational model presented in the previous chapter.
 
 \section{Parameters}
 Table \ref{tab:params} displays the parameters, the base values used in the main experiment, and a short explanation of each parameter. In a given experiment, the value of a parameter can be assumed to be the value associated with it in table \ref{tab:params}, unless no other value is specified.    
 
 \begin{table}[htbp]
     \centering
-    \caption[Table of the parameters in the model.]{Table of the parameters in the model.}\label{tab:params}
+    \caption[The parameters in the model.]{Table of the parameters in the model.}\label{tab:params}
     \begin{tabu} to 1.0\textwidth { X[1,c] X[1,c] X[5,p] }%{| c | c | p{0.8\linewidth} |} 
          \hline
          \rowfont\bfseries
@@ -20,16 +20,16 @@ Table \ref{tab:params} displays the parameters, the base values used in the main
 
          d & 1 & Number of dialogues per agent per generation. \\
 
-         k & 0.9 & k\% of the population is randomly chosen into the survival selection pool. \\
+         k & 0.9 & $(k \ast 100 )\%$ of the population is randomly chosen into the survival selection pool. \\
 
-         n & 0.5 & The n\% fittest agents in the pool survive to the next generation. \\ 
+         n & 0.5 & The $(n \ast 100 )\%$ fittest agents in the pool survive to the next generation. \\ 
 
          m & 0.02 & Probability of mutation. \\
 
          c & 0.5 & The constant which affects how extrovert agents can act. \\
          $\delta$ & 3 & Constant related to the probability of a child conducting its first dialogues with its parents.\\
          
-          $\epsilon$ & 0.2 & Probability in the parent selection pool is $(1-\epsilon)$\\ 
+          $\epsilon$ & 0.2 & Probability in the parent selection pool is $(1-\epsilon)$.\\ 
 
           $\alpha$ & 0.2 & Constant related to the fitness function part which concerns an agent's weights.\\
 
@@ -41,12 +41,12 @@ Table \ref{tab:params} displays the parameters, the base values used in the main
 \end{table}
 
 \section{Experiments}
-This section will present seven experiments. The experiments were conducted in the order in which they are presented. The first experiment represents the main results and the foundation for all experiments performed after it. The next two experiments tested what happens when the population increases or decreases. The fourth experiment was performed with an increased amount of dialogues per generation. The results from the third experiment lead to a hypothesis which is tested in the next experiment through lowering the probability of parent-child dialogues. The hypothesis will be presented in the discussion of the results. Experiment six tests how altering the turnover affects the evolutionary processes in this model. The last experiment adds a probability for agents to invent a new word even though their vocabulary is not empty.
+This section will present seven experiments. The experiments were conducted in the order in which they are presented. The first experiment represents the main results and the foundation for all experiments performed after it. The next two experiments tested what happens when the population increases or decreases. The fourth experiment was performed with an increased amount of dialogues per generation. The results from the third experiment lead to a hypothesis which was tested in the fifth experiment through lowering the probability of parent-child dialogues. The hypothesis will be presented in the discussion of the results. Experiment six tested how altering the turnover affects the evolutionary processes in this model. The last experiment added a probability for agents to invent a new word even though their vocabulary is not empty.
 
 In several of the experiments, some results were not included. The results not included were deemed as unimportant for the discussion in this thesis. These results can be seen in Appendix \ref{AppendixA}.
 
 \subsection{Experiment 1 - Main results}
-The main experiment was conducted with the exact values from table \ref{tab:params}. See figure~\ref{fig:Fitness} for the figures related to this experiment.
+The main experiment was conducted with the exact values from table \ref{tab:params}. See figure~\ref{fig:Fitness} for the graphs related to this experiment.
 
 The average fitness of the agents greatly increased during the first $40$ generations, and then the average fitness stabilised at about $0.85$. The average degree of the agents also increased a lot during the first $40$ generations, eventually stabilising at an average of about $10$ edges per agent. 
 
@@ -54,14 +54,15 @@ The easiest method for a newborn agent to acquire connections was through dialog
 
 The graphs describing the percentage of successful dialogues, number of unique highest ranked words in the vocabularies, and average number of words in a vocabulary, all tell the same story. In the beginning there were many words, all agents had large vocabularies, and few dialogues were successful. The number of unique words decreased substantially during the first $10$ generations, then at generation $62$, the population reached consensus. Consensus means that all agents had the same word as their highest weighted word. The graph which display the percentage of successful dialogues quickly reached $70\%$, then percentage gradually rose for the remainder of the simulation, ending at $90\%$. The average vocabulary size increased during the first generations, and then decreased until generation $60$, ending at an average of slightly more than one.
 
-The figures displaying the social network at generation $5$, $20$, $40$ and $100$ only include the agents with a connection, which explains why the number of nodes is not equal in all three figures, and why there is a discrepancy between the social network and the graph displaying the average degree per agent. The farther an agent is away from the centre of the social network, the fewer edges it has. The nodes closest to the centre are the ones with the most edges. At generation $5$, most of the nodes seemed to have two or three connections each. By generation $20$, the number of unique words had gone down and many of the agents had acquired several connections. The network at generation $20$, seemed to be more polarised than it was at generation $5$. Some agents had many connections, while a lot of agents had only one or two connections. At generation $40$, the social network had become even more polarised. The agents in the centre had gotten more connections, while the agents outside of the centre still had one or two edges. At generation 100 most of the population with connections had several connections, as can be seen by the high density of edges at the centre of the figure. There were still a select few agents with one or two edges, but those were by far in a minority.
+The figures displaying the social network at generation $5$, $20$, $40$ and $100$ only include the agents with a connection, which explains why the number of nodes is not equal in all four figures, and why there is a discrepancy between the social network and the graph displaying the average degree per agent. The farther an agent is away from the centre of the social network, the fewer edges it has. The nodes closest to the centre are the ones with the most edges. At generation $5$, most of the nodes seemed to have two or three connections each. By generation $20$, the number of unique words had gone down and many of the agents had acquired several connections. The network at generation $20$, seemed to be more polarised than it was at generation $5$. Some agents had many connections, while a lot of agents had only one or two connections. At generation $40$, the social network had become even more polarised. The agents in the centre had gotten more connections, while the agents outside of the centre still had one or two edges. At generation 100 most of the population with connections had several connections, as can be seen by the high density of edges at the centre of the figure. There were still a select few agents with one or two edges, but those were by far in a minority.
 
 \begin{figure}[htbp]
     \centering
     \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp1/Fitness1}}
     \hfill
     \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp1/Degree1}}
-    \par \bigskip
+\end{figure}
+\begin{figure}
     \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp1/UniqueWords1}}
     \hfill
     \subfigure[Green: Average vocabulary size. Blue: Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp1/Vocabulary1}}
@@ -86,7 +87,7 @@ The figures displaying the social network at generation $5$, $20$, $40$ and $100
 
 
 \subsection{Experiment 2 - Small population}
-This experiment was conducted with a population of 100. See figure~\ref{fig:Fitness2} for the figures related to this experiment. The variance seems to be higher with fewer agents, causing the average fitness and degree vary more from one generation to another. The average fitness seems to stabilise at about $0.85$ after generation $30$, which was earlier than in the main experiment. The percentage of successful reached $90\%$ after only $15$ generations, and the number of unique highest weighted words reached one after $15$ generations as well. At generation $5$, the social network consisted of a few agents with two or three edges per agent. Up until generation $40$, the social network became more and more dense for each generation that went by. Between generation $40$ and $100$, there seemed to be little change in the structure of the social network.   
+This experiment was conducted with a population of 100. See figure~\ref{fig:Fitness2} for the figures related to this experiment. The variance seems to be higher with fewer agents, causing the average fitness and degree vary more from one generation to another. The average fitness seems to stabilise at about $0.85$ after generation $30$, which was earlier than in the main experiment. The percentage of successful dialogues reached $90\%$ after only $15$ generations, and the number of unique highest weighted words reached $1$ after $15$ generations as well. At generation $5$, the social network consisted of a few agents with two or three edges per agent. Up until generation $40$, the social network became more and more dense for each generation that went by. Between generation $40$ and $100$, there seemed to be little change in the structure of the social network.   
 
 \begin{figure}[htbp]
     \centering
