@@ -53,10 +53,10 @@ Where $N$ is the number of edges the agent has, and $W_{ij}$ is the weight of an
 Agents also alter their personality based on who they communicate with. After a conversation, both agents alter their values using this formula:
 
 \begin{equation}\label{eq:PCR}
-\text{Personality change rate} = \parentheses{\frac{\Delta \text{Value} \ast \text{isSuccess}}{\text{age}}}\ast C,
+\text{Personality change rate} = \parentheses{\frac{\Delta \textit{Value} \ast \textit{isSuccess}}{\text{age}}}\ast C,
 \end{equation}
 
-where $\Delta \text{Value}$ is the difference of a specific value in the two agents' genomes, $\text{isSuccess}$ is a boolean which ensures that the personality is not changed if a conversation is unsuccessful, $\text{age}$ is the number of generations the agent has lived, and $C$ is a constant, $0 < C \geg 1$. $C$ makes the personality change rate have less of an impact the the smaller it is. After this is calculated for all values in the genome, it is normalised again.
+where $\Delta \textit{Value}$ is the difference of a specific value in the two agents' genomes, $\textit{isSuccess}$ is a boolean which ensures that the personality is not changed if a conversation is unsuccessful, $\text{age}$ is the number of generations the agent has lived, and $C$ is a constant, $0 < C \geq 1$. $C$ makes the personality change rate have less of an impact the the smaller it is. After this is calculated for all values in the genome, it is normalised again.
 
 One conversation is conducted by the speaker uttering a word $i$ from its vocabulary. The probability of a specific word from the vocabulary being uttered is:
 
