@@ -90,13 +90,14 @@ The figures displaying the social network at generation $5$, $20$, $40$ and $100
 
 \clearpage
 \subsection{Experiment 2 - Small population}
-This experiment was conducted with a population of 100. See Figures~\ref{fig:exp2.0}, \ref{fig:exp2.1}, and \ref{fig:exp2.2} for the Figures related to this experiment. The variance seems to be higher with fewer agents, causing the average fitness and degree to vary more from one generation to another, as seen in Figures \ref{fig:exp2.0}\subref{fig:Fitness2} and \ref{fig:exp2.0}\subref{fig:Degree2}. The average fitness seems to stabilise at about $0.85$ after generation $30$, which was earlier than in the main experiment. The percentage of successful dialogues reached $90\%$ after only $15$ generations, as seen in Figure~\ref{fig:exp2.1}\subref{fig:succDia2}, and the number of unique highest weighted words reached $1$ after $15$ generations as well, as seen in Figure~\ref{fig:exp2.1}\subref{fig:uniqueWords2}. At generation $5$, the social network consisted of a few agents with two or three edges per agent, as seen in Figure~\ref{fig:exp2.2}\subref{fig:exp2SN5}. Up until generation $40$, the social network became more and more dense for each generation that went by, as seen in Figure~\ref{fig:exp2.2}\subref{fig:exp2SN40}. Between generation $40$ and $100$, there seemed to be little change in the structure of the social network, as seen in Figure~\ref{fig:exp2.2}\subref{fig:exp2SN100}.
+This experiment was conducted with a population of 100. See Figures~\ref{fig:exp2.0}, \ref{fig:exp2.1}, and \ref{fig:exp2.2} for the Figures related to this experiment. The variance seems to be higher with fewer agents, causing the average fitness and degree to vary more from one generation to another, as seen in Figures~\ref{fig:exp2.0}\subref{fig:Fitness2} and \ref{fig:exp2.0}\subref{fig:Degree2}. The average fitness seems to stabilise at about $0.85$ after generation $30$, which was earlier than in the main experiment. The percentage of successful dialogues reached $90\%$ after only $15$ generations, as seen in Figure~\ref{fig:exp2.1}\subref{fig:succDia2}, and the number of unique highest weighted words reached $1$ after $15$ generations as well, as seen in Figure~\ref{fig:exp2.1}\subref{fig:uniqueWords2}. At generation $5$, the social network consisted of a few agents with two or three edges per agent, as seen in Figure~\ref{fig:exp2.2}\subref{fig:exp2SN5}. Up until generation $40$, the social network became more and more dense for each generation that went by, as seen in Figure~\ref{fig:exp2.2}\subref{fig:exp2SN40}. Between generation $40$ and $100$, there seemed to be little change in the structure of the social network, as seen in Figure~\ref{fig:exp2.2}\subref{fig:exp2SN100}.
 
 \begin{figure}[htbp]
     \centering
     \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp2/Fitness1}\label{fig:Fitness2}}
     \hfill
     \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp2/Degree1}\label{fig:Degree2}}
+    \caption{The graphs from experiment 2}
     \label{fig:exp2.0}
 \end{figure}
 \begin{figure}
@@ -104,7 +105,7 @@ This experiment was conducted with a population of 100. See Figures~\ref{fig:exp
     \hfill
     \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp2/UniqueWords1}\label{fig:uniqueWords2}}
     \par \bigskip
-    \subfigure[Average vocabulary size.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp2/Vocabulary1}}
+    \subfigure[Average vocabulary size.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp2/Vocabulary1}\label{fig:Vocabuary2}}
     \hfill
     \subfigure[Successful dialogues / Total dialogues per generation]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp2/SuccDialogues1}\label{fig:succDia2}}
     \caption{The graphs from experiment 2}
@@ -125,73 +126,92 @@ This experiment was conducted with a population of 100. See Figures~\ref{fig:exp
 
 \clearpage
 \subsection{Experiment 3 - Large population}
-This experiment was performed with a population of $10000$. See figure~\ref{fig:Fitness3} for the figures related to this experiment. The results show that when there were many agents, they required more time to reach consensus. In fact, after 100 generations, the agents had not reached an agreement upon one word. This lead to communication more often being unsuccessful, which again lead to the average fitness and degree being lower than in the results from the main experiment. The difference in the social network is that the agents were divided into one main group and several other groups of two to three agents for the first generations.
+This experiment was performed with a population of $10000$. See Figure~\ref{fig:exp3.0}, \ref{fig:exp3.0} for the figures related to this experiment. The results show that when there were many agents, they required more time to reach consensus, as seen in Figure~\ref{fig:exp3.1}\subref{fig:uniqueWords3}. In fact, after 100 generations, the agents had not reached an agreement upon one word. This lead to communication more often being unsuccessful, as seen in Figure~\ref{fig:exp3.1}\subref{fig:succDia3}, which again lead to the average fitness and degree being lower than in the results from the main experiment, as seen in Figures~\ref{fig:exp3.0}\subref{fig:Fitness3} and \ref{fig:exp3.0}\subref{fig:Degree3}. The difference in the social network is that the agents were divided into one main group and several other groups of two to three agents for the first generations, as seen in Figure~\ref{fig:exp3.2}.
 
 \begin{figure}[htbp]
     \centering
-    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Fitness1}}
+    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Fitness1}\label{fig:Fitness3}}
     \hfill
-    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Degree1}}
-    \par \bigskip
-    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/UniqueWords1}}
+    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Degree1}\label{fig:Degree3}}
+    \caption{Graphs from experiment 3.}
+    \label{fig:exp3.0}
+\end{figure}
+\begin{figure}
+    \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Genes1}\label{fig:Genes3}}
     \hfill
-    \subfigure[Green: Average vocabulary size. Blue: Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Vocabulary1}}
+    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/UniqueWords1}\label{fig:uniqueWords3}}
     \par \bigskip
-    \caption{The graphs from experiment 3.}
-    \label{fig:Fitness3}
+    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Vocabulary1}\label{fig:Vocabulary3}}
+    \hfill
+    \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/SuccDialogues1}\label{fig:succDia3}}
+    \caption{Graphs from experiment 3.}
+    \label{fig:exp3.1}
 \end{figure}
 \begin{figure}[htbp]
     \centering
     \ContinuedFloat
-    \subfigure[Social network at generation 5.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/_graph5}}
+    \subfigure[Social network at generation 5.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/_graph5}\label{fig:exp3SN5}}
     \hfill
-    \subfigure[Social network at generation 10.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/_graph10}}
+    \subfigure[Social network at generation 10.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/_graph10}\label{fig:exp3SN10}}
     \par \bigskip
-    \subfigure[Social network at generation 40.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/_graph40}}
+    \subfigure[Social network at generation 40.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/_graph40}\label{fig:exp3SN40}}
     \hfill
-    \subfigure[Social network at generation 100.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/_graph100}}
+    \subfigure[Social network at generation 100.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/_graph100}\label{fig:exp3SN100}}
     \caption{Snapshots of the social network of experiment 3 at generation 5, 10, 40, and 100.}
-    \label{fig:SN3}
+    \label{fig:exp3.2}
 \end{figure}
 
+\clearpage
 \subsection{Experiment 4 - Dialogues}
-This experiment was conducted with $d = 5$, meaning that each generation conducted $5$ times as many dialogues as the main experiment did. See figure~\ref{fig:Fitness4} for the figures related to this experiment. The average degree increased when $5$ times as many dialogues were conducted. The increase in dialogues ensures that each agent has more and stronger connections leading to a higher average fitness. the simulation reached consensus at about the same time as the main experiment. The social network evolved similarly as in the main experiment, except that the agents on average had more edges.
+This experiment was conducted with $d = 5$, meaning that each generation conducted five times as many dialogues as in experiment $1$. See Figures~\ref{fig:exp4.0} and \ref{fig:exp4.1} for the graphs related to this experiment. The average degree increased when five times as many dialogues were conducted, as seen in Figure~\ref{fig:exp4.0}\subref{fig:Degree4}. The increase in dialogues ensures that each agent has more and stronger connections leading to a higher average fitness, as seen in Figure~\ref{fig:exp4.0}\subref{fig:Fitness4}. The simulation reached consensus at about the same time as the main experiment, as seen in Figure~\ref{fig:exp4.1}\subref{fig:uniqueWords4}. The probability of acting extrovertly stagnated at about $16\%$, which is almost three times more than experiment 1, as seen in Figure~\ref{fig:exp4.1}\subref{fig:Genes4} The social network evolved similarly as in the main experiment, except that the agents on average had more edges.
 
 \begin{figure}[htbp]
     \centering
-    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/Fitness1}}
+    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/Fitness1}\label{fig:Fitness4}}
     \hfill
-    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/Degree1}}
-    \par \bigskip
-    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/UniqueWords1}}
-    \caption{The graphs from experiment 4.}
-    \label{fig:Fitness4}
-\end{figure}
-
-\subsection{Experiment 5 - Less Parent-child dialogues}
-This experiment was conducted with the constant, $\delta = 1$. $\delta$ is related to the probability of a child having its first dialogues with its parents. See figure~\ref{fig:Fitness5} for the figures related to this experiment. The simulation was ran for $150$ generations, $g = 150$, because it did not reach consensus after $100$ generations, and knowing how this simulation evolved up until consensus might be interesting. The average fitness increased slowly during the entire simulation. The average degree reached four at generation $70$, and during the next $80$ generations the average only increased by $0.5$. The percentage of successful dialogues quickly reached $60\%$, and slowly increased during the entire simulation ending at $93\%$. The average vocabulary size increased during the first $25$ generations, and then decreased and ended at $1.04$. The simulation reached consensus at generation $127$.
-
-\begin{figure}[htbp]
-    \centering
-    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Fitness1}}
-    \hfill
-    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Degree1}}
-    \par \bigskip
-    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/UniqueWords1}}
-    \hfill
-    \subfigure[Green: Average vocabulary size. Blue: Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Vocabulary1}}
-    \caption{The graphs from experiment 5.}
-    \label{fig:Fitness5}
+    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/Degree1}\label{fig:Degree4}}
+    \caption{Graphs from experiment 4.}
+    \label{fig:exp4.0}
 \end{figure}
 \begin{figure}
     \centering
-    \subfigure[Social network at generation 5]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/_graph5}\label{exp5SN5}}
+    \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/genes1}\label{fig:Genes4}}
     \hfill
-    \subfigure[Social network at generation 10]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/_graph10}\label{exp5SN10}}
-    \caption{Snapshots of the social network of experiment 5 at generation 5 and 10.}
-    \label{fig:SN5}
+    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/UniqueWords1}\label{fig:uniqueWords4}}
+    \par \bigskip
+    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/Vocabulary1}\label{fig:Vocabulary4}}
+    \hfill
+    \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/SuccDialogues1}\label{fig:succDia4}}
+    \caption{Graphs from experiment 4.}
+    \label{fig:exp4.1}
 \end{figure}
 
+\clearpage
+\subsection{Experiment 5 - Less Parent-child dialogues}
+This experiment was conducted with the constant $\delta = 1$. $\delta$ is related to the probability of a child having its first dialogues with its parents. See figures~\ref{fig:exp5.0} and \ref{fig:exp5.1} for the figures related to this experiment. The simulation was ran for $150$ generations, e.g. $g = 150$, because it did not reach consensus after $100$ generations, and knowing how this simulation evolved up until consensus might be interesting. The average fitness increased slowly during the entire simulation, as seen in Figure~\ref{fig:exp5.0}\subref{fig:Fitness5}. The average degree reached four at generation $70$, and during the next $80$ generations the average only increased by $0.5$, as seen in Figure~\ref{fig:exp5.0}\subref{fig:Degree5}. The percentage of successful dialogues quickly reached $60\%$, and slowly increased during the entire simulation ending at $93\%$, as seen in Figure~\ref{fig:exp5.1}\subref{fig:succDia5}. The average vocabulary size increased during the first $25$ generations, and then decreased and ended at $1.04$, as seen in Figure~\ref{fig:exp5.1}\subref{fig:Vocabulary5}. The simulation reached consensus at generation $127$, as seen in Figure~\ref{fig:exp5.1}\subref{fig:uniqueWords5}.
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Fitness1}\label{fig:Fitness5}}
+    \hfill
+    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Degree1}\label{fig:Degree5}}
+    \caption{Graphs from experiment 5.}
+    \label{fig:exp5.0}
+\end{figure}
+\begin{figure}
+    \centering
+    \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Genes1}\label{fig:Genes5}}
+    \hfill
+    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/UniqueWords1}\label{fig:uniqueWords5}}
+    \par \bigskip
+    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Vocabulary1}\label{fig:Vocabulary5}}
+    \hfill
+    \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/SuccDialogues1}\label{fig:succDia5}}
+    \caption{Graphs from experiment 5.}
+    \label{fig:exp5.1}
+\end{figure}
+
+\clearpage
 \subsection{Experiment 6 - Turnover}
 The first experiment was performed with $k = 0.95$ and $n = 0.7$. See figure~\ref{fig:Fitness6} for the figures related to this experiment. This simulation was run for $150$ generations because the population were far away from reaching consensus after $100$ generations. The figures that display the genes and the evolution of the social network have not been included because they were similar to the ones from the main experiment. Both the average fitness and degree stabilised after about $75$ generations. The average degree stabilised at $11$ and the average fitness at $0.88$. The number of unique words decreased a lot during the first $20$ generations. The simulation did not reach consensus. It reached two unique words at generation $125$, and ended with two unique words after all $150$ generations.   
 
@@ -212,7 +232,7 @@ The second experiment related to turnover was conducted with $k = 0.95$ and $n =
     \label{fig:Fitness6}
 \end{figure}
 
-
+\clearpage
 \subsection{Experiment 7 - making up new words}
 This experiment was conducted with an added probability for agents to invent a new word even though they had at least one word in their vocabulary. The probability was set to $25\%$ in this experiment. See figure~\ref{fig:Fitness7} for the figures related to this experiment. The average fitness stabilised at $0.37$, and the average degree stabilised at about $6.5$. Both of these values were considerably lower than in the main experiment. The average vocabulary size was $6$ and the percentage of successful dialogues quickly reached $0.5$ but it did not slowly increase like in the previous experiments. The number of unique highest ranked words evolved similarly to the main experiment. The population reached consensus at generation $68$, only six generations after the main experiment. 
 
