@@ -141,7 +141,7 @@ This experiment was performed with a population of $10000$. See Figure~\ref{fig:
     \hfill
     \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/UniqueWords1}\label{fig:uniqueWords3}}
     \par \bigskip
-    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Vocabulary1}\label{fig:Vocabulary3}}
+    \subfigure[Average vocabulary size.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Vocabulary1}\label{fig:Vocabulary3}}
     \hfill
     \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/SuccDialogues1}\label{fig:succDia3}}
     \caption{Graphs from experiment 3.}
@@ -179,7 +179,7 @@ This experiment was conducted with $d = 5$, meaning that each generation conduct
     \hfill
     \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/UniqueWords1}\label{fig:uniqueWords4}}
     \par \bigskip
-    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/Vocabulary1}\label{fig:Vocabulary4}}
+    \subfigure[Average vocabulary size.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/Vocabulary1}\label{fig:Vocabulary4}}
     \hfill
     \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp4/SuccDialogues1}\label{fig:succDia4}}
     \caption{Graphs from experiment 4.}
@@ -204,7 +204,7 @@ This experiment was conducted with the constant $\delta = 1$. $\delta$ is relate
     \hfill
     \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/UniqueWords1}\label{fig:uniqueWords5}}
     \par \bigskip
-    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Vocabulary1}\label{fig:Vocabulary5}}
+    \subfigure[Average vocabulary size.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/Vocabulary1}\label{fig:Vocabulary5}}
     \hfill
     \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp5/SuccDialogues1}\label{fig:succDia5}}
     \caption{Graphs from experiment 5.}
@@ -219,17 +219,23 @@ The second experiment related to turnover was conducted with $k = 0.95$ and $n =
 
 \begin{figure}[htbp]
     \centering
-    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Fitness1}}
+    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Fitness1}\label{fig:Fitness6}}
     \hfill
-    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Degree1}}
-    \par \bigskip
-    \subfigure[Number of unique highest ranked words in the population of the first experiment.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/UniqueWords1}}
+    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Degree1}\label{fig:Degree6}}
+    \caption{Graphs from experiment 6.}
+    \label{fig:exp6.0}
+\end{figure}
+\begin{figure}
+    \centering
+    \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Genes1}\label{fig:Genes6}}
     \hfill
-    \subfigure[Green: Average vocabulary size. Blue: Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Vocabulary1}}
+    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/UniqueWordsAB}\label{fig:uniqueWords6}}
     \par \bigskip
-    \subfigure[Number of unique highest ranked words in the population of the second experiment.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6.1/UniqueWords1}\label{fig:6.1}}
-    \caption{The graphs from experiment 6.}
-    \label{fig:Fitness6}
+    \subfigure[Average vocabulary size.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Vocabulary1}\label{fig:Vocabulary6}}
+    \hfill
+    \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/SuccDialogues1}\label{fig:succDia6}}
+    \caption{Graphs from experiment 6.}
+    \label{fig:exp6.1}
 \end{figure}
 
 \clearpage
@@ -240,16 +246,21 @@ One other experiment was performed with the probability set to $45\%$. See figur
 
 \begin{figure}[htbp]
     \centering
-    %Figurtekst, tror jeg. Men i følge Randi skal sånn stå i hovedfigurteksten: Figurer fra resultater fra eksp. 7: a) Avg. fitness; b) avg. degree; and c) ....
-    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Fitness1}}
+    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Fitness7}\label{fig:Fitness7}}
     \hfill
-    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Degree1}}
-    \par\bigskip
-    \subfigure[Number of unique highest ranked words in the population of the first experiment.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/UniqueWords1}}
+    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Degree7}\label{fig:Degree7}}
+    \caption{Graphs from experiment 7.}
+    \label{fig:exp7.0}
+\end{figure}
+\begin{figure}
+    \centering
+    \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Genes1}\label{fig:Genes7}}
     \hfill
-    \subfigure[Green: Average vocabulary size. Blue: Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Vocabulary1}}
-    \par\bigskip
-    \subfigure[Number of unique highest ranked words in the population of the second experiment.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7.1/UniqueWords1}\label{fig:7.1}}
-    \caption{The graphs from experiment 7.}
-    \label{fig:Fitness7}
+    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/UniqueWordsAB}\label{fig:uniqueWords7}}
+    \par \bigskip
+    \subfigure[Average vocabulary size.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Vocabulary1}\label{fig:Vocabulary7}}
+    \hfill
+    \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/SuccDialogues1}\label{fig:succDia7}}
+    \caption{Graphs from experiment 7.}
+    \label{fig:exp7.1}
 \end{figure}
