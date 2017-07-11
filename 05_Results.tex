@@ -137,7 +137,7 @@ This experiment was performed with a population of $10000$. See Figure~\ref{fig:
     \label{fig:exp3.0}
 \end{figure}
 \begin{figure}
-    \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Genes1}\label{fig:Genes3}}
+    \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/Genes1}}
     \hfill
     \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp3/UniqueWords1}\label{fig:uniqueWords3}}
     \par \bigskip
@@ -213,13 +213,14 @@ This experiment was conducted with the constant $\delta = 1$. $\delta$ is relate
 
 \clearpage
 \subsection{Experiment 6 - Turnover}
-The first experiment was performed with $k = 0.95$ and $n = 0.7$. See figure~\ref{fig:Fitness6} for the figures related to this experiment. This simulation was run for $150$ generations because the population were far away from reaching consensus after $100$ generations. The figures that display the genes and the evolution of the social network have not been included because they were similar to the ones from the main experiment. Both the average fitness and degree stabilised after about $75$ generations. The average degree stabilised at $11$ and the average fitness at $0.88$. The number of unique words decreased a lot during the first $20$ generations. The simulation did not reach consensus. It reached two unique words at generation $125$, and ended with two unique words after all $150$ generations.   
+%
+Experiment 6 was performed in two parts, part 6a with $k = 0.95$ and $n = 0.7$, compared to $k = 0.9$ and $n = 0.5$ in the other experiments. This means that a larger portion (n) of the population was chosen for survival and from a larger selection pool (K). Figures~\ref{fig:exp6.0} and \ref{fig:exp6.1} show the results of experiment 6. This simulation was run for $150$ generations because the population was far away from reaching consensus after $100$ generations. The figures that display the genes and the evolution of the social network have not been included because they were similar to the ones from the main experiment. Both the average fitness and degree stabilised after about $75$ generations, as can be seen in the Figures~\ref{fig:Fitness6} and \ref{fig:Degree6}. The average degree stabilised at $11$ and the average fitness at $0.88$. The number of unique words decreased a lot during the first $20$ generations, as can be seen in Figure~\ref{fig:uniqueWords6}. The simulation did not reach consensus. It reached two unique words at generation $125$, and also ended with two unique words after all $150$ generations.   
 
-The second experiment related to turnover was conducted with $k = 0.95$ and $n = 0.85$. See figure~\ref{fig:6.1} for the figure related to this experiment. The only figure included was the one related to the number of unique words because it is the only one who will be discussed later on. This simulation was ran for $200$ generations in order for it to reach consensus. Consensus was reached at generation $178$. At generation $125$, when the previous experiment had reached two words, this simulation had six unique words. 
+Experiment 6b was conducted with $k = 0.95$ and $n = 0.85$ which allowed a larger portion of the fittest agents to survive each generation, giving the simulation a lower selection pressure. Experiment 6b was conducted in order to see what happened when the selection pressure was lower than in experiment 6b. Figure ~\ref{fig:uniqueWords6} compares how experiment 6a and 6b evolved towards consensus. Experiment 6b was ran for $200$ generations in order for it to reach consensus. Consensus was reached at generation $178$. At generation $125$, when experiment 6a had reached two words, this simulation had six unique words. 
 
 \begin{figure}[htbp]
     \centering
-    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Fitness1}\label{fig:Fitness6}}
+    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Vocabulary1}\label{fig:Fitness6}}
     \hfill
     \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Degree1}\label{fig:Degree6}}
     \caption{Graphs from experiment 6.}
@@ -227,32 +228,33 @@ The second experiment related to turnover was conducted with $k = 0.95$ and $n =
 \end{figure}
 \begin{figure}
     \centering
-    \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Genes1}\label{fig:Genes6}}
+    \subfigure[]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/SuccDialogues1}\label{fig:succDia6}}
     \hfill
-    \subfigure[Number of unique highest ranked words in the population.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/UniqueWordsAB}\label{fig:uniqueWords6}}
+    \subfigure[]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Vocabulary1}\label{fig:Vocabulary6}}
     \par \bigskip
-    \subfigure[Average vocabulary size.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/Vocabulary1}\label{fig:Vocabulary6}}
-    \hfill
-    \subfigure[Successful dialogues divided by total number of dialogues.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp6/SuccDialogues1}\label{fig:succDia6}}
-    \caption{Graphs from experiment 6.}
+    \subfigure[]{\includegraphics[width=0.6\linewidth]{fig/Results/Exp6/UniqueWordsAB}\label{fig:uniqueWords6}}
+    \caption{Graphs from experiment 6: \subref{fig:succDia6} Successful dialogues divided by total number of dialogues; \subref{fig:Vocabulary6} Average vocabulary size; and \subref{fig:uniqueWords6} Number of unique highest ranked words in the population.}
     \label{fig:exp6.1}
 \end{figure}
 
 \clearpage
 \subsection{Experiment 7 - making up new words}
-This experiment was conducted with an added probability for agents to invent a new word even though they had at least one word in their vocabulary. The probability was set to $25\%$ in this experiment. See figure~\ref{fig:Fitness7} for the figures related to this experiment. The average fitness stabilised at $0.37$, and the average degree stabilised at about $6.5$. Both of these values were considerably lower than in the main experiment. The average vocabulary size was $6$ and the percentage of successful dialogues quickly reached $0.5$ but it did not slowly increase like in the previous experiments. The number of unique highest ranked words evolved similarly to the main experiment. The population reached consensus at generation $68$, only six generations after the main experiment. 
+Experiment 7 was conducted in two parts, both with an added probability for agents to invent a new word even though they had at least one word in their vocabulary. See Figures~\ref{fig:exp7.0} and \ref{fig:exp7.1} for the results from the two parts of the experiment.
 
-One other experiment was performed with the probability set to $45\%$. See figure~\ref{fig:7.1} for the figure related to this experiment. The other graphs have not been included because they will not be relevant to the discussion. The number of unique words quickly dropped to about five, but from five it struggled to actually reach consensus. From generation $61$ to the end of the simulation, the number of unique highest ranked words varied from one to three.  
+Experiment 7a was performed with the probability of inventing a new word set to $25\%$. The average fitness stabilised at $0.37$, and the average degree stabilised at about $6.5$, as seen in Figures~\ref{fig:Fitness7} and \ref{fig:Degree7}. Both of these values were considerably lower than in experiment $1$. Figures~\ref{fig:Vocabulary7} and \ref{fig:succDia7} show that average vocabulary size was $6$ and the percentage of successful dialogues quickly reached $0.5$ but it did not slowly increase like in the previous experiments. The number of unique highest ranked words evolved similarly to experiment $1$, as seen in Figure~\ref{fig:uniqueWords7}. The population reached consensus at generation $68$, only six generations experiment $1$. 
+
+Experiment 7b was performed with the probability of inventing a word increased to $45\%$. See figure~\ref{fig:uniqueWords7} for the figure related to this experiment. The other graphs have not been included because the purpose of this experiment was to see how the evolution towards consensus changed with a higher probability of inventing a word. The number of unique words quickly dropped to about five, but from five it struggled to actually reach consensus. Experiment 7b reached consensus at generation $73$, but that only lasted a few generations. For the remainder of the simulation, the number of unique words varied from one to four. 
 
 \begin{figure}[htbp]
     \centering
-    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Fitness7}\label{fig:Fitness7}}
+    \subfigure[The average fitness.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Fitness1}\label{fig:Fitness7}}
     \hfill
-    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Degree7}\label{fig:Degree7}}
+    \subfigure[The average degree.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Degree1}\label{fig:Degree7}}
     \caption{Graphs from experiment 7.}
     \label{fig:exp7.0}
 \end{figure}
 \begin{figure}
+    \ContinuedFloat
     \centering
     \subfigure[Green: Average probability of conducting parent-child dialogues. Blue: Average learning rate. Red: Average probability of acting extrovertly.]{\includegraphics[width=0.49\linewidth]{fig/Results/Exp7/Genes1}\label{fig:Genes7}}
     \hfill
