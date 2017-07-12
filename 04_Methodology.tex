@@ -2,6 +2,15 @@
 %%=========================================
 \chapter{Methodology}\label{ch:Methodology}
 
+\section{Discussion}
+The social networks used in the models presented in the previous chapter was relatively simple. All agents have been assumed to be extrovert, looking for new connections. It has also been assumed that if two agents with the same language conduct a conversation, the conversation was always viewed as a success, and the agents would develop a strong connection over time. However, many people with the same language can not connect because of personal differences and not because they are unable to communicate. If a person does not fit into a group, that person might look for a group that fits the person better, or slowly alter his/hers personality in order to fit in. Cultural evolution is about how language was transferred between individuals, and between generations. 
+
+How language is transferred between individuals is affected by whom one chooses to converse with. How someone decides to interact with others might be affected by that someone’s personality. A social network can be used to visualise how and with whom someone chooses to interact. Personality might have an effect on a person’s social network, and incorporating individual personality into a language game based model and visualising it through a social network might enhance the understanding of the effects cultural learning has on language evolution. 
+
+Among the models studied, Lekvam’s model was best suited for this extension because it already had a social network implemented. The model also used a naming game, which was a language game that was often used when the effects of cultural learning were studied. Lipowska’s model used a lattice, which does not suit the proposed extension because it does not allow the number of connections an agent has to change. Gong’s and Munroe \& Cangelosi’s models primarily studied compositional language and not the effects of social networks. Also, Lekvam argued that his model was explicitly made in such a manner that it was suited for extensions.
+
+\section{overskrift?}
+
 This computational model is based on Lekvam’s model, adding personalities based on Schwartz' 10 values model \citep{lekvam2014co, schwartz2012overview}. This chapter will also present a new method for choosing a listener, calculating the weights in the social network, and a new fitness function.
 
 The model uses a genetic algorithm which simulates the evolution of language and social networks over time. Tournament selection is used as parent selection. In tournament selection, a pool of random agents is chosen. Then the agents are sorted based on their fitness. The probability of an agent being chosen is,
