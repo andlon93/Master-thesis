@@ -25,39 +25,39 @@ Social evolution is looked at during one person's lifetime, and the evolution is
     \label{fig:LanguageForces}
 \end{figure}
 
-\subsection{Origin of language}
+\subsection{Origin of Language}
 No one knows exactly how or when humans began communicating. In order for language to have emerged, there had to be a need for communication. For example, if one person saw a deer approaching, that person would want to communicate that to the others so that they could go and hunt together. Situations like this, where communication was beneficial, is likely to have arisen often. Most linguists agree upon the theory that the first human form of communication was holistic, i.e. simple utterances and physical gestures, and was used to express a reaction to concepts such as hunt or run \citep{christiansen2003language}. How a holistic language evolved into the syntactical language used today is not known \citep{bickerton2007language}.
 
-\subsection{Baldwin effect}
+\subsection{Baldwin Effect}
 The Baldwin effect is based on the idea that the traits an individual learns during its lifetime can guide evolution \citep{baldwin1896new}. Learning a skill comes with a cost, so if that skill is very important, the individuals with an innate ability to learn this skill have an advantage over the others. If the cost of acquiring the skill stays high and the skill remains important over time, individuals that easily master the skill will be favoured in natural selection. For example, the skill of making a fire, if this skill were to become instinctive, the population as a whole would save a lot of time not having to teach everyone how to make fire. The individuals that learn the skill easily have an advantage because they can use the spare time doing other essential tasks, like hunting for food. If the selection pressure is high enough and the cost of learning the art of making a fire is high during several generations, the Baldwin effect states that the population will eventually consist of individuals that easily learn how to make a fire.
 
 Many researchers have experimented with the Baldwin effect during recent years. \citet{lipowska2011naming} argues that the results from her model show that the learned traits during an individual's lifetime have an effect on language evolution, meaning that the Baldwin effect has an effect on language evolution. \citet{zollman2010plasticity} also conclude that their model indicates that the Baldwin effect is influencing the evolution of language. \citet{chater2010language} argue that, based on their results, the Baldwin effect may have an influence on parts of language evolution. However, the parts of the language that change consistently, such as word order and morphology, i.e. the structure of words, would have a too low selection pressure for the Baldwin effect to have an impact on them.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Language games}
+\section{Language Games}
 Language games are games where artificial agents interact with each other and try to understand each other. For the agents to understand each other, they need to reach a state where their individual languages are similar. This similarity is reached by the agents conversing and changing their respective vocabularies based on what the other agent utters.
 
 Two agents are picked out, traditionally at random, and one of the agents gets the role of \textit{hearer} and the other agent is the \textit{speaker}. The speaker then utters something about a concept. If the hearer understands the utterance, the conversation is labelled as a success, and if the hearer did not understand, the conversation is labelled as a failure. If the speaking agent does not have any way of describing the concept perceived, it has the ability to make up new words in order to describe the concept. 
 
 Language games have become a standard method of simulating language within the field of computer simulations of language evolution. Many variations of language games have been designed: naming games, spatial naming games, and signalling games will be presented in the following subsections.
 
-\subsection{Naming games}
+\subsection{Naming Games}
 Simple naming games typically have a language without grammar, and all conversations occur without an environment. All agents have a vocabulary containing words they have heard or invented during conversations with other agents. Conversations occur between two agents, they attempt to agree upon an utterance for an object they both have perceived. If both agents can agree upon an utterance, the conversation is redeemed as a success, and that utterance becomes more likely to be used again for both agents. If they cannot agree, the hearing agent adds the new word to its vocabulary and the speaking agent decreases the probability of that word being used again. Words that have not been used successfully in a long time are eventually removed from the agent's vocabulary.
 
 During the first generations there will be many unsuccessful conversations, leading to words being spread around in the population giving all agents a large vocabulary. When the agents have added enough words to their vocabularies, some conversations will be successful. This will lead to agents removing their least successful words. If the simulation is given enough time, the agents may reach a consensus on almost all words. However, reaching a consensus on the last words seems to require some element of chance \citep{steels1997synthetic}.
 
 Naming games are often used to analyse cultural transmission between agents of the same generation. \citeauthor{lipowska2011naming} made a computational simulation using naming games which analysed the cultural transmission over several generations. This model will be reviewed in section \ref{sec:Lipowska}.
 
-\subsection{Spatial naming games}\label{SpatNamingGame}
+\subsection{Spatial Naming Games}\label{SpatNamingGame}
 Spatial naming games are a form of naming games where all conversations are set in the same environment. The speaking agent describes its understanding of the environment to the listener. If the listener agrees with the description of the environment, the conversation is viewed upon as a success. If the agents do not agree, the conversation is deemed as a failure. As with normal simple games, the goal is that all agents reach a consensus. \citeauthor{gong2011simulating} simulated agents that tried to reach a consensus by building up a compositional language. His work will be examined further in section \ref{sec:Gong}.
 
-\subsection{Signalling games}
+\subsection{Signalling Games}
 Signalling games simulate a compositional language using an \ac{ann}. The signal uttered is the output of an agent's \ac{ann}. The output will normally be a sequence of numerical values where the order of the numbers represents a sentence in natural language. This abstraction makes it easier to study compositional languages \citep{munroe2002learning, suzuki2008learning}. \citeauthor{munroe2002learning} made a signalling game where the language was evolved by agents walking around in a world of mushrooms. The agents' task was to reach a consensus concerning which mushrooms were edible and which were not. This was done by evolving a language from \acp{ann}. The computational model using signalling games made by \citeauthor{munroe2002learning} will be examined further in section \ref{sec:Munroe}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Schwartz's theory of Basic Values}\label{SchwartzBasicValues}
+\section{Schwartz's Theory of Basic Values}\label{SchwartzBasicValues}
 There is no doubt that personality affects a person's social network. Personality is so complex that even making a simplistic model of it might seem impossible. \citet{schwartz1992unniversals} presents a theory which models personalities by figuring out which of the types of values are most important to a person.
 
 \subsection{Model}
@@ -120,10 +120,10 @@ The survey was answered by people from all over the world with many different ba
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Graph theory}
+\section{Graph Theory}
 In recent years, a few papers have presented language game models with structured networks. \citet{lipowska2011naming} used a lattice to simulate a social graph, while others have incorporated social structures into their models \citep{lekvam2014co, gong2004computational}. This section will present discrete graphs, some of their features and how they are used in social networks.
 
-A discrete graph is a discontinuous graph where the $x$-values of its function is limited to specific intervals, for example integers. This makes the graph consist of points, and not a line like a continuous graph. These points are usually referred to as vertices. The vertices in a discrete graph are connected with edges. These edges can be associated with a weight representing the cost between two vertices or not weighted, which essentially is the same as weighting all edges with the same value. In a discrete graph cities may be represented as vertices, and the roads between them as edges. The weight of the edges between cities could represent travel time, or distance between the cities. If it is possible to travel both ways along an edge, the edge is called an \textit{undirected edge}. Otherwise, if it is only possible to travel in one direction along the edge, like a one-way driven street, it is called a \textit{directed edge}. A directed graph can have up to two edges between a vertice pair, while an undirected graph can have up to one edge between a vertice pair. Figure~\ref{fig:graph} shows an example of a directed and a undirected graph. Unless otherwise specified, the graphs presented in this thesis will be undirected.
+A discrete graph is a discontinuous graph where the $x$-values of its function is limited to specific intervals, for example integers. This makes the graph consist of points, and not a line like a continuous graph. These points are usually referred to as vertices. The vertices in a discrete graph are connected with edges. These edges can be associated with a weight representing the cost between two vertices or not weighted, which essentially is the same as weighting all edges with the same value. In a discrete graph cities may be represented as vertices, and the roads between them as edges. The weight of the edges between cities could represent travel time or distance between the cities. If it is possible to travel both ways along an edge, the edge is called an \textit{undirected edge}. Otherwise, if it is only possible to travel in one direction along the edge, like a one-way driven street, it is called a \textit{directed edge}. A directed graph can have up to two edges between a vertice pair, while an undirected graph can have up to one edge between a vertice pair. Figure~\ref{fig:graph} shows an example of a directed and a undirected graph. Unless otherwise specified, the graphs presented in this thesis will be undirected.
 
 A neighbour of a vertice, $v$, in a graph is another vertice which is connected to $v$ by an edge. The number of neighbours a vertice has is called the degree of the vertice. The density of a graph, $\mathrm{DENSITY}(G)$, is the number of edges in the graph $G$ divided by the theoretical maximum edges of $G$, $\mathrm{MAX}_\mathrm{edges}(G)$. In an undirected graph $G_\mathrm{undirected}$, with vertices $V$, the maximum number of edges are
 \begin{equation}\label{eq:maximumEdges}
@@ -138,10 +138,12 @@ where $E$ is the number of edges. Figure~\ref{fig:undirectedGraph} shows an undi
 
 \begin{figure}[htbp]
     \centering
-    \subfigure[Directed graph.]{\includegraphics[width=0.35\linewidth, scale=0.7]{Directed_graph}}
-    \qquad\qquad\qquad
-    \subfigure[Undirected graph.]{\includegraphics[width=0.35\linewidth, scale=0.7]{Undirected_graph}\label{fig:undirectedGraph}}
-    \caption[The difference between a directed and an undirected graph.]{An illustration of the difference between a directed and an undirected graph. The circles represent vertices and the straight lines, both with and without and arrow, represent edges.}
+    \hfill
+    \subfigure[\todo{FJERNE}Directed graph.]{\includegraphics[width=0.4\linewidth]{Directed_graph}\label{fig:directedGraph}}
+    \hfill
+    \subfigure[\todo{FJERNE}Undirected graph.]{\includegraphics[width=0.4\linewidth]{Undirected_graph}\label{fig:undirectedGraph}}
+    \hfill
+    \caption[The difference between a directed and an undirected graph.]{An illustration of the difference between \todo{\subref{fig:directedGraph}} a directed and \todo{\subref{fig:undirectedGraph}} an undirected graph. The circles represent vertices and the straight lines, both with and without and arrow, represent edges.}
     \label{fig:graph}
 \end{figure}
 
