@@ -12,7 +12,7 @@ The evolutionary linguists believe that language evolved through natural selecti
 In recent years, there has been a discussion concerning the importance of individual learning and how big of an impact culture and society has on individual learning. Sociolinguists believe that language evolution is affected by society and culture \citep{tomasello2003makes}. Their theory has been strengthened by the use of computational models of simplified social networks. These models show that social networks affect language evolution.
 
 \label{EvoltionaryForces}
-There are three forces that are believed to affect language evolution: biological evolution, cultural evolution, and social evolution, see figure \ref{fig:LanguageForces}. To fully understand the theories on language evolution, the theories have to be viewed in the light of these three forces.
+There are three forces that are believed to affect language evolution: biological evolution, cultural evolution, and social evolution, see Figure~\ref{fig:LanguageForces}. To fully understand the theories on language evolution, the theories have to be viewed in the light of these three forces.
 
 Biological evolution is the slowest force, working on a \textit{phylogenetic} time scale. It involves how an individual improves its abilities to learn and process language in order to survive and reproduce.
 Cultural evolution works on a historical time scale, called the \textit{glossogenetic} time scale. In cultural evolution, the change is viewed upon unique languages that exist within a society. It concerns how the features of the language get culturally transferred from one person to another, and from one generation to another.
@@ -104,7 +104,7 @@ According to Schwartz, values have six features that make it possible to figure 
 \end{enumerate}
 All values have these features. What separates the values are the goals they are connected to. 
 
-To display the relations between the values, Schwartz made a circular model of them, see figure~\ref{fig:TenValuesSchwartz}. The figure is divided into four categories that display the values that work towards similar goals. The categories are openness to change, self-enhancement, self-transcendence, and conservation. The values of the openness to change category contradict the values of the conservation category, while the self-enhancement category contradicts the self-transcendence category. Hedonism is split between openness to change and self-enhancement because it relates to both. The farther the values are apart from each other, the more contradictory they are. Values that are opposite to each other are therefore completely contradictory values. E.g. Conformity and tradition both completely contradict stimulation and hence both are placed opposite to stimulation. Schwartz thought that conformity is slightly more contradictory to stimulation than tradition is, so conformity was placed innermost of the two.
+To display the relations between the values, Schwartz made a circular model of them, see Figure~\ref{fig:TenValuesSchwartz}. The figure is divided into four categories that display the values that work towards similar goals. The categories are openness to change, self-enhancement, self-transcendence, and conservation. The values of the openness to change category contradict the values of the conservation category, while the self-enhancement category contradicts the self-transcendence category. Hedonism is split between openness to change and self-enhancement because it relates to both. The farther the values are apart from each other, the more contradictory they are. Values that are opposite to each other are therefore completely contradictory values. E.g. Conformity and tradition both completely contradict stimulation and hence both are placed opposite to stimulation. Schwartz thought that conformity is slightly more contradictory to stimulation than tradition is, so conformity was placed innermost of the two.
 
 \begin{figure}
     \centering
@@ -156,14 +156,14 @@ A social network is a discrete graph where each vertice is a person and the edge
 
 %Et lite latex-triks: Latex kan holde styr på akronymene dine, som f.eks. GA, i fila backmatter/acronyms.tex. Her legger du inn akronymet og det fulle ordet. Når du skal bruke det i teksten skriver du bare backslash ac{GA}. Første gang det dukker opp i teksten vil det fulle ordet pluss forkortelsen i parentes dukke opp, e.g. genetic algoritm (GA), mens andre, tredje, osv. gang vil kun forkortelsen dukke opp GA. For du skal ikke definere hva forkortelsen er mer enn én gang. Og ved hjelp av dette holder latex styr på det for deg. Smart, ikke sant?
 
-\section{Genetic algorithms} \label{GAalgorithm}
-A \ac{ga} is a search algorithm based on the Darwinian principle of biological evolution. Imagine that you got the job of optimising an exam schedule at a university so that every student could take their desired combination of courses and be pleased with the exam dates. This would be impossible for humans due to the large search space. There probably does not even exist a solution where every student is pleased. In problems without a guaranteed optimal solution and with a large search space, \ac{ga}s perform well.
+\section{Genetic Algorithms} \label{GAalgorithm}
+A \ac{ga} is a search algorithm based on the Darwinian principle of biological evolution. Imagine that you got the job of optimising an exam schedule at a university so that every student could take their desired combination of courses and be pleased with the exam dates. This would be impossible for humans due to the large search space. There probably does not even exist a solution where every student is pleased. In problems without a guaranteed optimal solution and with a large search space, \acp{ga} perform well.
 
-The general structure of a \ac{ga} can be seen in figure~\ref{fig:GA}. First, a population of solutions is made, and all solutions are tested through a fitness function, which evaluates solutions and returns a fitness value that reflects how fit the solution is. Then survival selection is performed by having the fittest individuals of the population, or the best solutions, survive while the rest of the population dies. The solution that each individual represents is defined by a set of parameters, often referred to as an individual’s \textit{genome}. The genome is often represented as a bit-string. New solutions are then created by having the surviving solutions combine their genomes into new genomes by crossover, see figure~\ref{fig:Crossover}. When a new solution is made, it has a small chance of mutation, i.e. a small alteration of the genome of the solution. Then these solutions are tested, and once again the fittest individuals survive to the next generation and get to breed.
+The general structure of \iac{ga} can be seen in Figure~\ref{fig:GA}. First, a population of solutions is made, and all solutions are tested through a fitness function, which evaluates solutions and returns a fitness value that reflects how fit the solution is. Then survival selection is performed by having the fittest individuals of the population, or the best solutions, survive while the rest of the population dies. The solution that each individual represents is defined by a set of parameters, often referred to as an individual’s \textit{genome}. The genome is often represented as a bit-string. New solutions are then created by having the surviving solutions combine their genomes into new genomes by crossover, see Figure~\ref{fig:Crossover}. When a new solution is made, it has a small chance of mutation, i.e. a small alteration of the genome of the solution. Then these solutions are tested, and once again the fittest individuals survive to the next generation and get to breed.
 
 The flow of a general \ac{ga} looks like this \citep{michalski2013machine}:
-\begin{itemize}
-    \item Initialise a population P of individuals with random solutions.
+\begin{enumerate}
+    \item Initialise a population $P$ of individuals with random solutions.
     \item Evaluation: Calculate the fitness of all individuals.
     \item While the highest fitness value in the population is smaller than the desired fitness value or the maximum number of iterations has not been reached, the following steps are performed:
     \begin{enumerate}
@@ -172,7 +172,7 @@ The flow of a general \ac{ga} looks like this \citep{michalski2013machine}:
         \item Mutation: Randomly select a few of the new individuals and let their genome mutate.
         \item Evaluation: Calculate the fitness of the new solutions.
     \end{enumerate}
-\end{itemize}
+\end{enumerate}
 
 
 \begin{figure}[htbp]
@@ -192,7 +192,7 @@ p(1-p)^r,
 \end{equation}
 where $p$ is a user-given probability, $0 < p < 1$, for choosing the fittest individual in a tournament. 
 
-When two parents have been selected to mate, crossover is performed and two new individuals are created based on the parents' genomes. The most common form of crossover is performed by randomly choosing one point on the bit-string, and splitting each parent's genomes into two parts, A and B. One child receives part A from one parent and part B from the other parent. The other child receives the opposite parts. See figure~\ref{fig:Crossover} for a simple graphic explanation of crossover. Mutation is performed on an individual with a user-given probability. Mutation is normally performed by simply flipping one bit in the bit-string.
+When two parents have been selected to mate, crossover is performed and two new individuals are created based on the parents' genomes. The most common form of crossover is performed by randomly choosing one point on the bit-string, and splitting each parent's genomes into two parts, A and B. One child receives part A from one parent and part B from the other parent. The other child receives the opposite parts. See Figure~\ref{fig:Crossover} for a simple graphic explanation of crossover. Mutation is performed on an individual with a user-given probability. Mutation is normally performed by simply flipping one bit in the bit-string.
 
 \begin{figure}[htbp]
     \centering
