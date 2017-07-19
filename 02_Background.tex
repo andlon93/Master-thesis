@@ -121,27 +121,27 @@ The survey was answered by people from all over the world with many different ba
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Graph Theory}
-In recent years, a few papers have presented language game models with structured networks. \citet{lipowska2011naming} used a lattice to simulate a social graph, while others have incorporated social structures into their models \citep{lekvam2014co, gong2004computational}. This section will present discrete graphs, some of their features and how they are used in social networks.
+Language game models with structured networks have, in recent years, been presented in a few papers. For instance, \citet{lipowska2011naming} used a lattice to simulate a social graph, while others have incorporated social structures into their models \citep{lekvam2014co, gong2004computational}. This section will present discrete graphs, some of their features and how they are used in social networks.
 
-A discrete graph is a discontinuous graph where the $x$-values of its function is limited to specific intervals, for example integers. This makes the graph consist of points, and not a line like a continuous graph. These points are usually referred to as vertices. The vertices in a discrete graph are connected with edges. These edges can be associated with a weight representing the cost between two vertices or not weighted, which essentially is the same as weighting all edges with the same value. In a discrete graph cities may be represented as vertices, and the roads between them as edges. The weight of the edges between cities could represent travel time or distance between the cities. If it is possible to travel both ways along an edge, the edge is called an \textit{undirected edge}. Otherwise, if it is only possible to travel in one direction along the edge, like a one-way driven street, it is called a \textit{directed edge}. A directed graph can have up to two edges between a vertice pair, while an undirected graph can have up to one edge between a vertice pair. Figure~\ref{fig:graph} shows an example of a directed and a undirected graph. Unless otherwise specified, the graphs presented in this thesis will be undirected.
+A discrete graph represents values at specific points along the number line, for example integers. This makes the graph consist of points, and not a line, which represents a function that is continuous along its entire domain. These points are usually referred to as vertices ingraph theory. The vertices in a discrete graph are connected with edges. These edges can be associated with a weight representing the cost between two vertices. The edges could also be not weighted, which essentially is the same as weighting all edges with the same value. In a discrete graph cities may be represented as vertices, and the roads between them as edges. The weight of the edges between cities could represent the travel time or the distance between the cities. If it is possible to travel both ways along an edge, the edge is called an \textit{undirected edge}. Otherwise, if it is only possible to travel in one direction along the edge, like a one-way driven street, it is called a \textit{directed edge}. A directed graph can have up to two edges between a vertice pair, while an undirected graph can have up to one edge between a vertice pair. An example of a directed and a undirected graph can be seen in Figure~\ref{fig:graph}. Unless otherwise specified, the graphs presented in this thesis will be undirected.
 
-A neighbour of a vertice, $v$, in a graph is another vertice which is connected to $v$ by an edge. The number of neighbours a vertice has is called the degree of the vertice. The density of a graph, $\mathrm{DENSITY}(G)$, is the number of edges in the graph $G$ divided by the theoretical maximum edges of $G$, $\mathrm{MAX}_\mathrm{edges}(G)$. In an undirected graph $G_\mathrm{undirected}$, with vertices $V$, the maximum number of edges are
+Two vertices are called neighbours if they are connected to each other by an edge. The number of neighbours a vertice has, is called the degree of the vertice. The density of a graph, $\mathrm{DENSITY}(G)$, is the number of edges in the graph $G$ divided by the theoretical maximum number of edges $G$ can have, $\mathrm{MAX}_\mathrm{edges}(G)$. In an undirected graph $G_\mathrm{undirected}$, with $N_V$ number of vertices, the maximum number of edges are
 \begin{equation}\label{eq:maximumEdges}
-\mathrm{MAX}_\mathrm{edges}(G_\mathrm{undirected}) = \frac{V  (V-1)}{2}
+\mathrm{MAX}_\mathrm{edges}(G_\mathrm{undirected}) = \frac{N_V(N_V-1)}{2}
 \end{equation}
 
 Using the definition of the density of a graph from above together with Eq.~\eqref{eq:maximumEdges}, the graph's density becomes
 \begin{equation}\label{eq:densityOfGraph}
-\mathrm{DENSITY}(G_\mathrm{undirected}) = \frac{2 E}{V(V-1)},
+\mathrm{DENSITY}(G_\mathrm{undirected}) = \frac{2 N_E}{N_V(N_V-1)},
 \end{equation}
-where $E$ is the number of edges. Figure~\ref{fig:undirectedGraph} shows an undirected graph with three vertices: A, B and C. Vertices A and B have a degree of 1 since they have one neighbour each, while vertice C has a degree of 2 since it has two neighbours. By using Eq.~\eqref{eq:densityOfGraph}, the density of the graph becomes $2\cdot2 / (3\cdot2) = \frac{2}{3}$.
+where $N_E$ is the number of edges. Figure~\ref{fig:undirectedGraph} shows an undirected graph with three vertices: A, B and C. Vertices A and B have a degree of 1 since they have one neighbour each, while vertice C has a degree of 2 since it has two neighbours. By using Eq.~\eqref{eq:densityOfGraph}, the density of the graph becomes $2\cdot2 / (3\cdot2) = \frac{2}{3}$.
 
 \begin{figure}[htbp]
     \centering
     \hfill
-    \subfigure[\todo{FJERNE}Directed graph.]{\includegraphics[width=0.4\linewidth]{Directed_graph}\label{fig:directedGraph}}
+    \subfigure[]{\includegraphics[width=0.4\linewidth]{Directed_graph}\label{fig:directedGraph}}
     \hfill
-    \subfigure[\todo{FJERNE}Undirected graph.]{\includegraphics[width=0.4\linewidth]{Undirected_graph}\label{fig:undirectedGraph}}
+    \subfigure[]{\includegraphics[width=0.4\linewidth]{Undirected_graph}\label{fig:undirectedGraph}}
     \hfill
     \caption[The difference between a directed and an undirected graph.]{An illustration of the difference between \todo{\subref{fig:directedGraph}} a directed and \todo{\subref{fig:undirectedGraph}} an undirected graph. The circles represent vertices and the straight lines, both with and without and arrow, represent edges.}
     \label{fig:graph}
