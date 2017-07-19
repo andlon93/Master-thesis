@@ -55,7 +55,7 @@ When an agent chooses a listener, the agent's social network and personality are
 P = \parentheses{\frac{\sum \text{extrovert values} + (100 - \sum \text{introvert values})}{200}C}/100
 \end{equation}
 
-where $C$ is a constant, between $0 < C \geq 1$, which forces all individuals to have a tendency towards introvertedness. People tend to have more conversations with people they already know, so skewing the probability towards introvertedness seems reasonable. The first conversations a newborn has might be with its parents. The probability of having dialogues with parents is equal to the normalised value of the security value in the genome. Each parent will conduct three dialogues each and the newborn will function as the listener in all these conversations. If the speaking agent $i$ decides to act introvertly, the probability of contacting one specific agent $j$ is related to the weight between the agents:
+where $C$ is a constant, between $0 < C \leq 1$, which forces all individuals to have a tendency towards introvertedness. People tend to have more conversations with people they already know, so skewing the probability towards introvertedness seems reasonable. The first conversations a newborn has might be with its parents. The probability of having dialogues with parents is equal to the normalised value of the security value in the genome. Each parent will conduct three dialogues each and the newborn will function as the listener in all these conversations. If the speaking agent $i$ decides to act introvertly, the probability of contacting one specific agent $j$ is related to the weight between the agents:
 \begin{equation}\label{eq:intrvertListener}
 P_{i,j} = \frac{W_{ij}}{\sum_{k=1}^{N}{W_{ik}}},
 \end{equation}

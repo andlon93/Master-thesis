@@ -162,15 +162,15 @@ A \ac{ga} is a search algorithm based on the Darwinian principle of biological e
 The general structure of \iac{ga} can be seen in Figure~\ref{fig:GA}. First, a population of solutions is made, and all solutions are tested through a fitness function, which evaluates solutions and returns a fitness value that reflects how fit the solution is. Then survival selection is performed by having the fittest individuals of the population, or the best solutions, survive while the rest of the population dies. The solution that each individual represents is defined by a set of parameters, often referred to as an individual’s \textit{genome}. The genome is often represented as a bit-string. New solutions are then created by having the surviving solutions combine their genomes into new genomes by crossover, see Figure~\ref{fig:Crossover}. When a new solution is made, it has a small chance of mutation, i.e. a small alteration of the genome of the solution. Then these solutions are tested, and once again the fittest individuals survive to the next generation and get to breed.
 
 The flow of a general \ac{ga} looks like this \citep{michalski2013machine}:
-\begin{enumerate}
-    \item Initialise a population $P$ of individuals with random solutions.
-    \item Evaluation: Calculate the fitness of all individuals.
-    \item While the highest fitness value in the population is smaller than the desired fitness value or the maximum number of iterations has not been reached, the following steps are performed:
+\begin{enumerate}[noitemsep]
+    \item \textbf{Initialisation:}\\Initialise a population of individuals with random solutions.
+    \item \textbf{Evaluation:} \\Calculate the fitness of all individuals.
+    \item \textbf{Termination clause:}\\While the highest fitness value in the population is smaller than the desired fitness value or the maximum number of iterations has not been reached, the following steps are performed:
     \begin{enumerate}
-        \item Parent selection: Select which individuals to bring into the next generation based upon their fitness.
-        \item Recombination: Probabilistically select two individuals based on their fitness and combine their solutions into two new solutions by using crossover.
-        \item Mutation: Randomly select a few of the new individuals and let their genome mutate.
-        \item Evaluation: Calculate the fitness of the new solutions.
+        \item \textbf{Parent selection:} Select which individuals to bring into the next generation based upon their fitness.
+        \item \textbf{Recombination:} Probabilistically select two individuals based on their fitness and combine their solutions into two new solutions by using crossover.
+        \item \textbf{Mutation:} Randomly select a few of the new individuals and let their genome mutate.
+        \item \textbf{Evaluation:} Calculate the fitness of the new solutions.
     \end{enumerate}
 \end{enumerate}
 
