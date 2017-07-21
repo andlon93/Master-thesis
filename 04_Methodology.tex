@@ -67,6 +67,7 @@ P_{i,j} = \frac{W_{ij}}{\sum_{k=\{\text{connected to } i\}} {W_{ik}}},
 \end{equation}
 where $W_{ij}$ is the weight of an edge and the summation is performed on all agents connected to agent $i$. If the agent decides to be extrovert, it randomly chooses an agent to contact from the population it is not already connected to. If the parents do not conduct conduct conversations with their newborn agent, the agent will have its for first dialogue with whomever that contacts it first from the population.
 
+\clearpage
 Agents also alter their personality based on who they communicate with. An agent's personality is updated by calculating the \ac{pcr} for all the values in the genome. Then each value is updated through the formula $\mathrm{new_{personality}} = \mathrm{old_{personality}} + \mathrm{old_{personality}} \cdot \mathrm{pcr}$. After a conversation, both agents alter their values using the following formula
 \begin{equation}\label{eq:PCR}
 \text{Personality change rate} = C\frac{\Delta V_i S}{t},
