@@ -67,11 +67,11 @@ P_{i,j} = \frac{W_{ij}}{\sum_{k=\{\text{connected to } i\}} {W_{ik}}},
 \end{equation}
 where $W_{ij}$ is the weight of an edge and the summation is performed on all agents connected to agent $i$. If the agent decides to be extrovert, it randomly chooses an agent to contact from the population it is not already connected to. If the parents do not conduct conduct conversations with their newborn agent, the agent will have its for first dialogue with whomever that contacts it first from the population.
 
-Agents also alter their personality based on who they communicate with. After a conversation, both agents alter their values using the following formula \todo{new = old + rate*old}
+Agents also alter their personality based on who they communicate with. An agent's personality is updated by calculating the \ac{pcr} for all the values in the genome. Then each value is updated through the formula $\mathrm{new_{personality}} = \mathrm{old_{personality}} + \mathrm{old_{personality}} \cdot \mathrm{pcr}$. After a conversation, both agents alter their values using the following formula
 \begin{equation}\label{eq:PCR}
 \text{Personality change rate} = C\frac{\Delta V_i S}{t},
 \end{equation}
-where $\Delta V_i$ is the difference of a specific value $i$ in the two agents' genomes, $S$ equals one if the conversation was successful and zero if it was unsuccessful, which ensures that the personality is not changed if a conversation is unsuccessful, $t$ is the number of generations the agent has lived, and $C$ is a constant, $0 < C \leq 1$. $C$ makes the personality change rate have less of an impact the smaller $C$ is. After the personality change rate is calculated for all values in the genome, the genome is normalised again.
+where $\Delta V_i$ is the difference of a specific value $i$ in the two agents' genomes, $S$ equals one if the conversation was successful and zero if it was unsuccessful, which ensures that the personality is not changed if a conversation is unsuccessful, $t$ is the number of generations the agent has lived, and $C$ is a constant, $0 < C \leq 1$. $C$ makes the \ac{pcr} have less of an impact the smaller $C$ is. After the \ac{pcr} is calculated for all values in the genome, the genome is normalised again.
 
 A conversation is conducted by the speaker uttering a word $i$ from its vocabulary. The probability of a specific word from the vocabulary being uttered is given by
 \begin{equation}\label{eq:chooseWordprob}
