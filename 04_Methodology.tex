@@ -1,6 +1,7 @@
 \acresetall
 %%=========================================
 \chapter{Methodology}\label{ch:Methodology}
+The computational model developed during this study is based on Lekvam’s model. As opposed to his model, this model add personalities based on Schwartz' 10 values model \citep{lekvam2014co, schwartz2012overview} in order to further investigate the understanding of the effect the evolutionary forces have on language evolution. The model will also present an alternative method for choosing a listener, calculating the weights in the social network, and evaluating the fitness of the agents.
 
 The social networks used in the models presented in the previous chapter were relatively simple. For example, the fitness functions in the previous models highly reward an extrovert strategy, i.e. attempting to meet new people. However, in reality, the majority of conversations in most peoples' lives are conducted with people they already know. A fitness function should ideally allow both strategies to be viable and allow the evolutionary process to display which traits are favourable.
 
@@ -12,8 +13,6 @@ Among the models studied, Lekvam’s model was best suited for these extensions 
 
 \section{Genetic Algorithm}
 
-The computational model developed during this study is based on Lekvam’s model. As opposed to his model, this model add personalities based on Schwartz' 10 values model \citep{lekvam2014co, schwartz2012overview} in order to further investigate the understanding of the effect the evolutionary forces have on language evolution. The model will also present a new method for choosing a listener, calculating the weights in the social network, and evaluating the fitness of the agents.
-
 The model uses a genetic algorithm which simulates the evolution of language and social networks over time. Parent selection is performed using tournament selection. First, a pool of agents is randomly chosen. Then, these agents are sorted from highest to lowest fitness and given a value corresponding to their ranking, i.e. the agent with the highest fitness has rank 0. Finally, the probability of an agent being chosen to become a parent is
 \begin{equation}
     \label{eq:TSelect}
@@ -23,19 +22,19 @@ where $i$ is the agent's rank in the pool and $p$ equals the probability of the 
 
 At the end of each generation, turnover selection is performed by randomly choosing $k\%$ of the population into a pool. Then, the $n\%$ fittest agents of that pool survive to the next generation.
 
-\section{Personalities}
+\section{Genome}
 
-Personalities are added into the model in the form of an agent’s genome. The genotype of an agent consists of ten numbers, in the interval between 0 and 100, each representing one of the ten values from Schwartz' model of basic human values. The values cannot be randomly initiated because some of the values depend on each other as some of the values describe relatively equal goals. If two contradicting values both have a high value, the goals of that person would contradict each other. So, in order to ensure the validity of the relations between the ten values, not all values can be created randomly. Schwartz categorises his ten values into four groups, as seen in Figure~\ref{fig:TenValuesSchwartz}. Values within a group are related and should have numerical values close to each other, while values on the opposite side of the circle should have opposite numerical values. In this model, the validity of the relations between the values is kept by randomly setting the self-direction and achievement value. Values in the same quadrant are set by using the following formula
+Personalities are added into the model in the form of an agent’s genome. The genotype of an agent consists of ten numbers, in the interval between 0 and 100, each representing one of the ten values from Schwartz' model of basic human values. The values cannot be randomly initiated because some of the values depend on each other as some of the values describe relatively equal goals. If two contradicting values both have a high value, the goals of that person would contradict each other. So, in order to ensure the validity of the relations between the ten values, not all values can be created randomly. Schwartz categorises his ten values into four groups, as seen in Figure~\ref{fig:TenValuesSchwartz}. Values within a group are related and should have numerical values close to each other, while values on the opposite side of the circle should have opposite numerical values. In this model, the validity of the relations between the values is kept by randomly setting the Self-direction and Achievement value. Values in the same quadrant are set by using the following formula
 
 \begin{equation}\label{eq:valuesInSameQuadrant}
 V_{i} = \frac{\mathrm{random}(0, 20)}{100} \cdot V_{i-1},
 \end{equation}
-where $V_{i}$ is the number associated with value $i$, $V_{i-1}$ is the number associated with the value counter clockwise of $V_i$ in the circle, and $\mathrm{random}(0, 20)$ is a random integer $i$, $0 \leq r \leq 20$. Security and benevolence is set based on the opposite value using the formula:
+where $V_{i}$ is the number associated with value $i$, $V_{i-1}$ is the number associated with the value counter clockwise of $V_i$ in the circle, and $\mathrm{random}(0, 20)$ is a random integer $i$, $0 \leq r \leq 20$. Security and Benevolence are set based on the opposite value using the formula
 \begin{equation}\label{eq:valuesInOppositeQuadrant}
 V_{i} = \frac{\mathrm{random}(1, 20)}{100} \cdot (100 - V_{\mathrm{opposite}}).
 \end{equation}
 
-The other values in the quadrants with security or benevolence are set based on Equation~\eqref{eq:valuesInSameQuadrant}. Hedonism is split between two quadrants and it is therefore calculated based on the two values next to it in Figure~\ref{fig:TenValuesSchwartz} through this formula:
+The other values in the quadrants with Security or Benevolence are set based on Equation~\eqref{eq:valuesInSameQuadrant}. Hedonism is split between two quadrants and it is therefore calculated based on the two values next to it in Figure~\ref{fig:TenValuesSchwartz} through this formula
 \begin{equation}\label{eq:hedonism}
 V_{i} = \frac{\mathrm{random}(1, 20)}{100} \cdot \frac{V_{i-1} + V_{i+1}}{2}.
 \end{equation}
@@ -44,7 +43,7 @@ The values of the genome is then normalised. The resulting genome is representin
 
 \section{Fitness Function}
 
-The fitness function is designed to both represent how well an agent communicates with the members of the community, and how the agent’s personality fits in with the group. An agent's ability to communicate was projected into the social network because the weights were adjusted based on an agent’s ability to be understood. The personality of the agents determines how good it is at learning a language, how extrovert it is, and whether it cares about its children. The fitness function also takes into account the age, $t$, of the agent. The fitness function is
+The fitness function is designed to both represent how well an agent communicates with the members of the community, and how the agent’s personality fits in with the group. An agent's ability to communicate is projected into the social network because the weights are adjusted based on an agent’s ability to be understood. The personality of the agents determines how good it is at learning a language, how extrovert it is, and whether it cares about its children. The fitness function also takes into account the age, $t$, of the agent. The fitness function is
 
 \begin{equation}\label{eq:Fitness}
 \text{Fitness}(j) = \left[ \exp\left(\alpha \sum_{i=1}^{N}{W_{ij}}\right)-1 \right] \left[ \exp\left(\beta N_{W_{ij} \geq \Theta}\right) -1 \right] \gamma \exp\left(-0.05 t\right)
@@ -52,22 +51,21 @@ The fitness function is designed to both represent how well an agent communicate
 
 where $W_{ij}$ is the weight of the connection between agent $i$ and agent $j$, $t$ is the number of generations it has lived, $N$ is the total number of connections of agent $j$, $ N_{W_{ij} \geq \Theta}$ is the total number of connections that agent $j$ has that are stronger than the threshold $\Theta$, and $\alpha$, $\beta$, and $\gamma$ are constants adjusting the three factors of the fitness function. The first factor takes into account how strongly an agent connects to others by calculating the sum of all its weights. The second factor calculates how many agents with a connection strength stronger than the threshold $\Theta$ agent $j$ has. The third factor provides an agent with less fitness the older it becomes. These three factors combined display the agent’s fitness in the society. They take into account the number of connections the agent has, the strength of the connections, and the age of the agent.
 
-\section{Social Network}
+\section{Social Network and Dialogues}
 
 The social network in the model is represented by a weighted discrete graph, where the vertices represent the agents, and the edges represent the connections between the agents. If a dialogue is successful, i.e. the listeners has the uttered word in its vocabulary, the weight of the edge between the two agents is increased. If the dialogue was unsuccessful, i.e. the listener did not have the uttered word in its vocabulary, the weight is decreased. An edge gets added a weight of $1$ if the dialogue is successful and $0.5$ is subtracted if the dialogue was unsuccessful. This method of calculating the weight allows the language of the agent to affect the weight of the edge.
 
-When an agent chooses a listener, the agent takes into account both its social network and its personality. An agent can either be extrovert or introvert, which is reflected in its genome. The extrovert trait is connected to a high achievement value, which is found in people who seek recognition for their achievements. Many people enjoy sharing achievements with others. For some, the achievement has greater value if many knows about it. The introvert trait is connected to a high conformity value, which is found in people who are very aware of the consequences of their actions and might be careful in social settings because of it. Each of these values are taken from an agent’s genome and is therefore between 0 and 100. Based on these values, the following formula describes the probability of an agent reaching out to agents that it does not already have a connection with
+When an agent chooses a listener, the agent takes into account both its social network and its personality. An agent can either be extrovert or introvert, which is reflected in its genome. The extrovert trait is connected to a high Achievement value, which is found in people who seek recognition for their achievements. Many people enjoy sharing achievements with others. For some, the achievement has greater value if many knows about it. The introvert trait is connected to a high Conformity value, which is found in people who are very aware of the consequences of their actions and might be careful in social settings because of it. Each of these values are taken from an agent’s genome and is therefore between 0 and 100. Based on these values, the following formula describes the probability of an agent reaching out to agents that it does not already have a connection with
 
 \begin{equation}\label{eq:chooseListener}
 P = \parentheses{\frac{\sum \text{extrovert values} + (100 - \sum \text{introvert values})}{200}C}/100
 \end{equation}
-where $C$ is a constant in the range $0 < C \leq 1$, which forces all individuals to have a tendency towards introvertedness. People tend to have more conversations with people they already know, and hence skewing the probability towards introvertedness is reasonable. The first conversations a newborn agent conducts, might be with its parents. The probability of having dialogues with parents is equal to the normalised value of the security value in the genome. Each parent will conduct three dialogues each and the newborn will function as the listener in all these conversations. If the speaking agent $i$ decides to act introvertly, the probability of contacting one specific agent $j$ is related to the weight between the two agents by the following relation
+where $C$ is a constant in the range $0 < C \leq 1$, which forces all individuals to have a tendency towards introvertedness. People tend to have more conversations with people they already know, and hence skewing the probability towards introvertedness is reasonable. The first conversations a newborn agent conducts, might be with its parents. The probability of having dialogues with parents is equal to the normalised value of the Security value in the genome. Each parent will conduct three dialogues each and the newborn will function as the listener in all these conversations. If the speaking agent $i$ decides to act introvertly, the probability of contacting one specific agent $j$ is related to the weight between the two agents by the following relation
 \begin{equation}\label{eq:intrvertListener}
 P_{i,j} = \frac{W_{ij}}{\sum_{k=\{\text{connected to } i\}} {W_{ik}}},
 \end{equation}
 where $W_{ij}$ is the weight of an edge and the summation is performed on all agents connected to agent $i$. If the agent decides to be extrovert, it randomly chooses an agent to contact from the population it is not already connected to. If the parents do not conduct conduct conversations with their newborn agent, the agent will have its for first dialogue with whomever that contacts it first from the population.
 
-\clearpage
 Agents also alter their personality based on who they communicate with. An agent's personality is updated by calculating the \ac{pcr} for all the values in the genome. Then each value is updated through the formula $\mathrm{new_{personality}} = \mathrm{old_{personality}} + \mathrm{old_{personality}} \cdot \mathrm{pcr}$. After a conversation, both agents alter their values using the following formula
 \begin{equation}\label{eq:PCR}
 \text{Personality change rate} = C\frac{\Delta V_i S}{t},
