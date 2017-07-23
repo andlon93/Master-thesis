@@ -1,0 +1,20 @@
+\begin{figure}[htbp]
+    \centering
+    \subfigure[\todo{Subcaption.}]{\includegraphics[width=0.4\linewidth]{crossover2.png}\label{test1}}
+    \hfill
+    \subfigure[\todo{Subcaption.}]{\includegraphics[width=0.4\linewidth]{crossover2.png}\label{test2}}
+    \caption[\todo{Caption}]{\todo{Caption}}\label{fig:add_label}
+\end{figure}
+\begin{figure}[htbp]
+\ContinuedFloat
+\addtocounter{subfigure}{2}
+    \centering
+    \subfigure[\todo{Subcaption.}]{\includegraphics[width=0.4\linewidth]{crossover2.png}\label{test3}}
+    \hfill
+    \subfigure[\todo{Subcaption.}]{\includegraphics[width=0.4\linewidth]{crossover2.png}\label{test4}}
+    \captionsetup{list=no}
+    \caption{\emph{(continued)}}
+\end{figure}
+Fig.~\ref{fig:add_label}
+\subref{test1}\subref{test2}\subref{test3}\subref{test4}
+\ref{test1}\ref{test2}\ref{test3}\ref{test4}
